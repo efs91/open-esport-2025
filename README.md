@@ -76,7 +76,7 @@ git clone https://github.com/votre-username/open-esport-2025.git
 3. Assurez-vous que tous les addons sont correctement installés
 
 ## Release : 
--v0.2 :  https://antisys.fr/Games/openesport2025/Open-eSport-2025-v0.2.7z
+-v0.2 (win64):  https://antisys.fr/Games/openesport2025/Open-eSport-2025-v0.2.7z
 
 
 ## Contribution
