@@ -81,7 +81,7 @@ Les contributions sont les bienvenues ! N'hésitez pas à :
 5. Ouvrir une Pull Request
 
 ## Licence
-Ce projet est sous licence GNU General Public License v3.0 (GPL-3.0). Voir le fichier `LICENSE` pour plus de détails.
+Ce projet est sous licence GNU General Public License v3.0 (GPL-3.0). Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 Cette licence garantit que :
 - Le code source est librement accessible
