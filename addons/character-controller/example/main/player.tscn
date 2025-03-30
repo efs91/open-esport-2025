@@ -1,0 +1,73 @@
+[gd_scene load_steps=19 format=3 uid="uid://2oxdgu03lnbk"]
+
+[ext_resource type="PackedScene" uid="uid://8oy3xm2sff8" path="res://addons/character-controller/fps/fps_controller_3d.tscn" id="1_fbpun"]
+[ext_resource type="Script" uid="uid://ck7buaygo06ww" path="res://addons/character-controller/example/main/Player.cs" id="2_8r0nc"]
+[ext_resource type="Environment" uid="uid://b3cn01u84faiy" path="res://addons/character-controller/example/main/underwater.tres" id="3_rtvao"]
+[ext_resource type="Script" uid="uid://cjsirp4jdfhq5" path="res://addons/character-controller/abilities/SlideAbility3D.cs" id="4_5l66e"]
+[ext_resource type="PackedScene" uid="uid://c3gbexxyter6w" path="res://addons/fps-hands/fps-ak/fps-ak.tscn" id="4_jqtvs"]
+[ext_resource type="PackedScene" uid="uid://dx3pmb0twepo" path="res://addons/character-controller/example/main/audios/player_audios.tscn" id="4_ux8kv"]
+[ext_resource type="Curve" uid="uid://dhx3p5wsiw0bs" path="res://addons/character-controller/fps/bob/bob_curve.tres" id="4_waarh"]
+[ext_resource type="Resource" uid="uid://boafje76qrf27" path="res://addons/character-controller/example/main/audio_interacts/grass_audio_interact.tres" id="5_6q4eq"]
+[ext_resource type="Script" uid="uid://cjt8nn38jrfh3" path="res://addons/character-controller/abilities/ShootAbility3D.cs" id="5_shoot"]
+[ext_resource type="PhysicsMaterial" path="res://addons/character-controller/example/main/physics/grass.tres" id="6_cb2o2"]
+[ext_resource type="PhysicsMaterial" uid="uid://bklf2cx3fydt3" path="res://addons/character-controller/example/main/physics/stone.tres" id="7_tfxft"]
+[ext_resource type="PhysicsMaterial" path="res://addons/character-controller/example/main/physics/wood.tres" id="8_x73fn"]
+[ext_resource type="Resource" uid="uid://ci8kg40ae4vnl" path="res://addons/character-controller/example/main/audio_interacts/stone_audio_interact.tres" id="9_mdj3p"]
+[ext_resource type="Resource" uid="uid://dx5kojv0cn4yl" path="res://addons/character-controller/example/main/audio_interacts/wood_audio_interact.tres" id="10_xwjtq"]
+[ext_resource type="Resource" uid="uid://clro80qf2tdqi" path="res://addons/character-controller/example/main/audio_interacts/water_audio_interact.tres" id="11_10eo5"]
+[ext_resource type="Script" uid="uid://dnojluexhkx0t" path="res://addons/character-controller/example/main/audios/AudioInteract.cs" id="11_qoi10"]
+[ext_resource type="PackedScene" uid="uid://cwl5tpaw5yqn1" path="res://scenes/HUD.tscn" id="15_0o1nh"]
+[ext_resource type="Texture2D" uid="uid://vy8rsbqxbm55" path="res://assets/textures/crosshair.png" id="17_2uskx"]
+
+[node name="Player" instance=ExtResource("1_fbpun")]
+script = ExtResource("2_8r0nc")
+InputBackActionName = "move_back"
+InputForwardActionName = "move_forward"
+InputLeftActionName = "move_left"
+InputRightActionName = "move_right"
+InputSprintActionName = "sprint"
+InputJumpActionName = "jump"
+InputCrouchActionName = "crouch"
+InputFlyModeActionName = "move_fly_mode"
+UnderwaterEnv = ExtResource("3_rtvao")
+Friction = 0.1
+SprintModeType = 1
+AbilitiesPath = Array[NodePath]([NodePath("Crouch Ability 3D"), NodePath("Sprint Ability 3D"), NodePath("Walk Ability 3D"), NodePath("Jump Ability 3D"), NodePath("Fly Ability 3D"), NodePath("Swim Ability 3D"), NodePath("Slide Ability 3D"), NodePath("Shoot Ability 3D")])
+
+[node name="Slide Ability 3D" type="Node3D" parent="." index="7"]
+script = ExtResource("4_5l66e")
+
+[node name="Shoot Ability 3D" type="Node3D" parent="." index="8"]
+script = ExtResource("5_shoot")
+
+[node name="Player Audios" parent="." index="10" instance=ExtResource("4_ux8kv")]
+AudioInteract = ExtResource("5_6q4eq")
+PhysicMaterials = Array[PhysicsMaterial]([ExtResource("6_cb2o2"), ExtResource("7_tfxft"), ExtResource("8_x73fn")])
+AudioInteracts = Array[ExtResource("11_qoi10")]([ExtResource("5_6q4eq"), ExtResource("9_mdj3p"), ExtResource("10_xwjtq")])
+WaterAudioInteract = ExtResource("11_10eo5")
+
+[node name="HUD" parent="." index="11" instance=ExtResource("15_0o1nh")]
+
+[node name="fps-ak" parent="Head/Camera" index="0" instance=ExtResource("4_jqtvs")]
+transform = Transform3D(-0.015, 0, -1.31134e-09, 0, 0.015, 0, 1.31134e-09, 0, -0.015, -0.0104729, -0.4, -0.617765)
+
+[node name="Head Bob" parent="Head" index="1"]
+BobCurve = ExtResource("4_waarh")
+
+[node name="TextureRect" type="TextureRect" parent="." index="13"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5
+offset_top = -11.5
+offset_right = 11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.28
+texture = ExtResource("17_2uskx")
+expand_mode = 4

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=12 format=3 uid="uid://boafje76qrf27"]
+
+[ext_resource type="Script" uid="uid://dnojluexhkx0t" path="res://addons/character-controller/example/main/audios/AudioInteract.cs" id="1_h7qps"]
+[ext_resource type="AudioStream" uid="uid://dyj8811150sq5" path="res://addons/character-controller/example/main/jute-dh-steps/stepdirt_1.wav" id="1_sbipl"]
+[ext_resource type="AudioStream" uid="uid://c2cl56b4rns2u" path="res://addons/character-controller/example/main/jute-dh-steps/stepdirt_2.wav" id="2_3lu1q"]
+[ext_resource type="AudioStream" uid="uid://cq1nrv2msdtpq" path="res://assets/sounds/foosteps/conctrete/Footstep_Concrete_Boots_Walk_1.WAV" id="3_22snr"]
+[ext_resource type="AudioStream" uid="uid://dgpn3gx6kh780" path="res://assets/sounds/foosteps/conctrete/Footstep_Concrete_Boots_Walk_2.WAV" id="4_cd07m"]
+[ext_resource type="AudioStream" uid="uid://d4gn12ncj37ru" path="res://assets/sounds/foosteps/conctrete/Footstep_Concrete_Boots_Walk_3.WAV" id="5_6rx6n"]
+[ext_resource type="AudioStream" uid="uid://cgmfrwmbtxi6a" path="res://assets/sounds/foosteps/conctrete/Footstep_Concrete_Boots_Walk_4.WAV" id="6_s3371"]
+[ext_resource type="AudioStream" uid="uid://bm85gwirfpd6v" path="res://assets/sounds/foosteps/conctrete/Footstep_Concrete_Boots_Walk_5.WAV" id="7_vcwlu"]
+[ext_resource type="AudioStream" uid="uid://rtsy2t163808" path="res://assets/sounds/foosteps/conctrete/Footstep_Concrete_Boots_Walk_6.WAV" id="8_o5lak"]
+[ext_resource type="AudioStream" uid="uid://rgqnlsmfj1g8" path="res://assets/sounds/foosteps/conctrete/Footstep_Concrete_Boots_Walk_7.WAV" id="9_ue445"]
+[ext_resource type="AudioStream" uid="uid://ctojjjrg3miv7" path="res://assets/sounds/foosteps/conctrete/Footstep_Concrete_Boots_Walk_8.WAV" id="10_v4dsf"]
+
+[resource]
+script = ExtResource("1_h7qps")
+JumpAudio = ExtResource("1_sbipl")
+LandedAudio = ExtResource("2_3lu1q")
+StepAudios = Array[AudioStream]([ExtResource("3_22snr"), ExtResource("4_cd07m"), ExtResource("5_6rx6n"), ExtResource("6_s3371"), ExtResource("7_vcwlu"), ExtResource("8_o5lak"), ExtResource("9_ue445"), ExtResource("10_v4dsf")])

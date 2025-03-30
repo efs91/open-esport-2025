@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://clfur2pg3m4oo"]
+
+[ext_resource type="Material" uid="uid://qgpy55ftv5f1" path="res://addons/ambientcg/Downloads/Pathway0041K-JPGdownload/material.tres" id="1_ex2bl"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.76753, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.757485, 0.652852, 0, -0.652852, 0.757485, -27.354, 2.50308, -4.92394)
+
+[node name="sol" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.41782, 0, 14.3579)
+material_override = ExtResource("1_ex2bl")
+size = Vector3(100.688, 1, 89.4975)
+
+[node name="SpawnPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.32023, 0, -0.172956)

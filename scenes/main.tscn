@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=3 uid="uid://d15rdh65of1ls"]
+
+[ext_resource type="Script" uid="uid://dq3o66asfhwsc" path="res://scripts/Main.cs" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://bq6da75yxov6y" path="res://scripts/managers/InputManager.cs" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://dc831r4wmqpll" path="res://scripts/managers/MenuManager.cs" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://72i07vp6ydn0" path="res://assets/textures/Menu/MenuBackgroug.png" id="3_tipki"]
+[ext_resource type="Texture2D" uid="uid://c7nlc0p5r3f07" path="res://assets/textures/logo/logo_294x155.png" id="4_85g3d"]
+[ext_resource type="Script" uid="uid://dw7ytndc0cidy" path="res://scripts/managers/GameManager.cs" id="5_o6xl0"]
+[ext_resource type="Script" uid="uid://dm2tgpdu2ji3c" path="res://scripts/managers/SceneManager.cs" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://botwvwbtvq6fb" path="res://scripts/managers/LogManager.cs" id="6_tipki"]
+[ext_resource type="Script" uid="uid://dyvy8t7ilrvvw" path="res://scripts/managers/ModuleManager.cs" id="7_85g3d"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0wfyh")
+
+[node name="UI" type="Node" parent="."]
+
+[node name="MenuManager" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_sugp2")
+
+[node name="Background" type="TextureRect" parent="UI/MenuManager"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_tipki")
+expand_mode = 2
+
+[node name="MenuCenterContainer" type="CenterContainer" parent="UI/MenuManager"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuVBoxContainer" type="VBoxContainer" parent="UI/MenuManager/MenuCenterContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="UI/MenuManager/MenuCenterContainer/MenuVBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_85g3d")
+stretch_mode = 2
+
+[node name="Title" type="Label" parent="UI/MenuManager/MenuCenterContainer/MenuVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Open Esport 2025"
+horizontal_alignment = 1
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="UI/MenuManager/MenuCenterContainer/MenuVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HUDManager" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HUDPanel" type="Panel" parent="UI/HUDManager"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HUDVBoxContainer" type="VBoxContainer" parent="UI/HUDManager/HUDPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameWorld" type="Node3D" parent="."]
+
+[node name="InputManager" type="Node" parent="."]
+script = ExtResource("1_o5qli")
+
+[node name="SceneManager" type="Node" parent="."]
+script = ExtResource("5_tbgi4")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("5_o6xl0")
+
+[node name="LogManager" type="Node" parent="."]
+script = ExtResource("6_tipki")
+
+[node name="ModuleManager" type="Node" parent="."]
+script = ExtResource("7_85g3d")

@@ -1,0 +1,81 @@
+Begin Object Class=/Script/Engine.Skeleton Name="SK_PistolSciFi" ExportPath="/Script/Engine.Skeleton'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi'"
+   Begin Object Class=/Script/Engine.SkeletalMeshSocket Name="SkeletalMeshSocket_0" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_0'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalMeshSocket Name="SkeletalMeshSocket_1" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_1'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalMeshSocket Name="SkeletalMeshSocket_2" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_2'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalMeshSocket Name="SkeletalMeshSocket_3" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_3'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalMeshSocket Name="SkeletalMeshSocket_4" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_4'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalMeshSocket Name="SkeletalMeshSocket_5" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_5'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalMeshSocket Name="SkeletalMeshSocket_6" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_6'"
+   End Object
+   Begin Object Class=/Script/Engine.SkeletalMeshSocket Name="SkeletalMeshSocket_7" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_7'"
+   End Object
+   Begin Object Class=/Script/Engine.AnimCurveMetaData Name="AnimCurveMetaData_0" ExportPath="/Script/Engine.AnimCurveMetaData'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:AnimCurveMetaData_0'"
+   End Object
+   Begin Object Name="SkeletalMeshSocket_0" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_0'"
+      SocketName="SilencerMuzzleFlashSocket"
+      BoneName="WeaponRoot"
+      RelativeLocation=(X=-41.585663,Y=0.000283,Z=9.148972)
+      RelativeRotation=(Pitch=0.000000,Yaw=179.999893,Roll=0.000000)
+   End Object
+   Begin Object Name="SkeletalMeshSocket_1" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_1'"
+      SocketName="LaserSightSocket"
+      BoneName="WeaponRoot"
+      RelativeLocation=(X=-18.412088,Y=-0.000029,Z=5.656848)
+      RelativeRotation=(Pitch=0.000000,Yaw=179.998901,Roll=0.000000)
+   End Object
+   Begin Object Name="SkeletalMeshSocket_2" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_2'"
+      SocketName="AimingCameraLocation"
+      BoneName="WeaponRoot"
+      RelativeLocation=(X=21.460312,Y=-0.000586,Z=11.950078)
+      RelativeRotation=(Pitch=0.000000,Yaw=179.999100,Roll=0.000000)
+   End Object
+   Begin Object Name="SkeletalMeshSocket_3" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_3'"
+      SocketName="BulletShellSpawnLocation"
+      BoneName="WeaponRoot"
+      RelativeLocation=(X=-6.234498,Y=-1.135159,Z=9.857573)
+      RelativeRotation=(Pitch=0.000000,Yaw=179.999374,Roll=0.000000)
+   End Object
+   Begin Object Name="SkeletalMeshSocket_4" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_4'"
+      SocketName="AttachmentSocketBarrelLowFront"
+      BoneName="WeaponRoot"
+      RelativeLocation=(X=-13.968117,Y=0.000198,Z=4.320681)
+      RelativeRotation=(Pitch=0.000000,Yaw=180.000000,Roll=0.000000)
+   End Object
+   Begin Object Name="SkeletalMeshSocket_5" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_5'"
+      SocketName="WeaponRootSocket"
+      BoneName="WeaponRoot"
+   End Object
+   Begin Object Name="SkeletalMeshSocket_6" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_6'"
+      SocketName="MuzzleFlashSocket"
+      BoneName="WeaponRoot"
+      RelativeLocation=(X=-31.539532,Y=0.000038,Z=9.240413)
+      RelativeRotation=(Pitch=0.000000,Yaw=179.999939,Roll=0.000000)
+   End Object
+   Begin Object Name="SkeletalMeshSocket_7" ExportPath="/Script/Engine.SkeletalMeshSocket'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:SkeletalMeshSocket_7'"
+      SocketName="AttachmentSocketSilencer"
+      BoneName="WeaponRoot"
+      RelativeLocation=(X=-20.221979,Y=0.000065,Z=9.159967)
+   End Object
+   Begin Object Name="AnimCurveMetaData_0" ExportPath="/Script/Engine.AnimCurveMetaData'/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SK_PistolSciFi.SK_PistolSciFi:AnimCurveMetaData_0'"
+      CurveMetaData=(("SubtractAmount", (Type=(bMaterial=True))))
+   End Object
+   BoneTree(3)=()
+   VirtualBoneGuid=E0828341469FAAD1984E2DB0D8FC6B85
+   Sockets(0)="/Script/Engine.SkeletalMeshSocket'SkeletalMeshSocket_6'"
+   Sockets(1)="/Script/Engine.SkeletalMeshSocket'SkeletalMeshSocket_1'"
+   Sockets(2)="/Script/Engine.SkeletalMeshSocket'SkeletalMeshSocket_2'"
+   Sockets(3)="/Script/Engine.SkeletalMeshSocket'SkeletalMeshSocket_3'"
+   Sockets(4)="/Script/Engine.SkeletalMeshSocket'SkeletalMeshSocket_4'"
+   Sockets(5)="/Script/Engine.SkeletalMeshSocket'SkeletalMeshSocket_0'"
+   Sockets(6)="/Script/Engine.SkeletalMeshSocket'SkeletalMeshSocket_7'"
+   Sockets(7)="/Script/Engine.SkeletalMeshSocket'SkeletalMeshSocket_5'"
+   PreviewSkeletalMesh="/Game/ThirdPersonKit/Meshes/WeaponsTPSKitOrginals/PIstolScifi/SKM_PistolSciFi.SKM_PistolSciFi"
+   PreviewAttachedAssetContainer=(AttachedObjects=((AttachedObject="/Game/ThirdPersonKit/Meshes/TSPKitAttachments/SM_SilencerScifi.SM_SilencerScifi",AttachedTo="AttachmentSocketSilencer"),(AttachedObject="/Game/ThirdPersonKit/Meshes/TSPKitAttachments/SM_LaserSightPistolScifi.SM_LaserSightPistolScifi",AttachedTo="AttachmentSocketBarrelLowFront")))
+   AssetUserData(0)="/Script/Engine.AnimCurveMetaData'AnimCurveMetaData_0'"
+End Object

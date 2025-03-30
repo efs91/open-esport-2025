@@ -1,0 +1,28 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[ambientcg]
+
+download_path="res://addons/ambientcg/Downloads/"
+
+[application]
+
+config/name="open-esport-2025"
+run/main_scene="uid://d15rdh65of1ls"
+config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="open-esport-2025"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ambientcg/plugin.cfg", "res://addons/fps-hands/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
