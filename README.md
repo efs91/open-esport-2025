@@ -7,8 +7,16 @@
 L'objectif principal est de proposer une **infrastructure autonome** et **auto-hébergeable**, indépendante des éditeurs traditionnels, afin de contourner les limitations ou changements de politique imposés à des fins commerciales.  
 Le projet est conçu pour être **compatible avec les environnements de déploiement modernes** (Docker, Kubernetes, PaaS comme Fly.io, Railway, ou IaaS comme AWS, GCP, Azure), tout en restant léger et simple à héberger en local.
 
-Cette solution s’adresse aux développeurs, organisateurs de tournois, communautés open source et toute personne souhaitant créer, gérer et faire évoluer une plateforme esport libre, transparente et souveraine.
+Cette solution s'adresse aux développeurs, organisateurs de tournois, communautés open source et toute personne souhaitant créer, gérer et faire évoluer une plateforme esport libre, transparente et souveraine.
 
+## État Actuel du Projet
+Le projet est actuellement en développement initial avec les fonctionnalités suivantes :
+- Menu principal fonctionnel
+- Module Casual Game : charge un personnage dans une carte
+- Module Character : système de déplacement complet
+- Système de tir basique avec animation et son
+- Système de footsteps
+- Modèle de personnage : capsule avec bras
 
 ## Fonctionnalités
 - Système de menus dynamique et modulaire
