@@ -1,113 +1,125 @@
 # Open Esport 2025
 
+[🇫🇷 Version Française : ](README_fr.md)
+
 ## Description
 
-**Open Esport 2025** est un projet de FPS compétitif open source développé avec le moteur **Godot 4**. Il vise à fournir une base modulaire, extensible et facilement déployable pour la création d'expériences esport modernes.
+**Open Esport 2025** is an open source competitive FPS project developed with the **Godot 4** engine. It aims to provide a modular, extensible, and easily deployable foundation for creating modern esport experiences.
 
-L'objectif principal est de proposer une **infrastructure autonome** et **auto-hébergeable**, indépendante des éditeurs traditionnels, afin de contourner les limitations ou changements de politique imposés à des fins commerciales.  
-Le projet est conçu pour être **compatible avec les environnements de déploiement modernes** (Docker, Kubernetes, PaaS comme Fly.io, Railway, ou IaaS comme AWS, GCP, Azure), tout en restant léger et simple à héberger en local.
+The primary goal is to offer a **self-hosted** and **autonomous infrastructure**, independent from traditional publishers, in order to bypass limitations or policy changes imposed for commercial purposes.  
+The project is designed to be **compatible with modern deployment environments** (Docker, Kubernetes, PaaS like Fly.io, Railway, or IaaS like AWS, GCP, Azure), while remaining lightweight and easy to host locally.
 
-Cette solution s'adresse aux développeurs, organisateurs de tournois, communautés open source et toute personne souhaitant créer, gérer et faire évoluer une plateforme esport libre, transparente et souveraine.
+This solution is intended for developers, tournament organizers, open source communities, and anyone wishing to create, manage, and evolve a free, transparent, and sovereign esport platform.
 
-## État Actuel du Projet
-Le projet est actuellement en développement initial avec les fonctionnalités suivantes :
-- Menu principal fonctionnel
-- Module Casual Game : charge un personnage dans une carte
-- Module Character : système de déplacement complet
-- Système de tir basique avec animation et son
-- Système de footsteps
-- Modèle de personnage : capsule avec bras
+## Current Project Status
+The project is currently in its initial development phase with the following features:
+- Functional main menu
+- Casual Game module: loads a character into a map
+- Character module: complete movement system
+- Basic shooting system with animation and sound
+- Footsteps system
+- Character model: capsule with arms
 
-## Fonctionnalités
-- Système de menus dynamique et modulaire
-- Gestion avancée des entrées utilisateur
-- Système de scènes flexible
-- Architecture modulaire et extensible
-- Système de logging centralisé
-- Système de personnage basé sur les capacités (Abilities)
+## Features
+- Dynamic and modular menu system
+- Advanced user input management
+- Flexible scene system
+- Modular and extensible architecture
+- Centralized logging system
+- Character system based on abilities:
+  - Walking
+  - Running
+  - Jumping
+  - Crouching
+  - Flying
+  - Swimming
+  - Air control
+  - Slope handling
 
-
-## Technologies Utilisées
+## Technologies Used
 - Godot Engine
 - C#
 - .NET
-- Plugins :
-  - [Character Controller](https://github.com/expressobits/character-controller) - Contrôleur de personnage modulaire
-  - [AmbientCG](https://github.com/mohsenph69/godot-ambientcg) - Import de textures PBR
-  - [FPS Hands](https://codeberg.org/Bytez/godot-fps-hands) - Système de mains FPS
+- Plugins:
+  - [Character Controller](https://github.com/expressobits/character-controller) – Modular character controller
+  - [AmbientCG](https://github.com/mohsenph69/godot-ambientcg) – PBR texture importer
+  - [FPS Hands](https://codeberg.org/Bytez/godot-fps-hands) – FPS hands system
 
-## Structure du Projet
-```
-open-esport-2025/
-├── scripts/
-│   ├── managers/     # Gestionnaires globaux
-│   ├── modules/      # Modules fonctionnels
-│   ├── structures/   # Structures de données
-│   ├── ui/          # Composants d'interface
-│   └── utils/       # Utilitaires
-├── scenes/          # Scènes Godot
-├── assets/          # Ressources (images, sons, etc.)
-├── configuration/   # Fichiers de configuration
-└── addons/         # Plugins Godot
-    ├── character-controller/  # Contrôleur de personnage
-    ├── ambientcg/           # Import de textures PBR
-    └── fps-hands/          # Système de mains FPS
-```
+## Project Structure
+
+open-esport-2025/ ├── scripts/ │ ├── managers/ # Global managers │ ├── modules/ # Functional modules │ ├── structures/ # Data structures │ ├── ui/ # User interface components │ └── utils/ # Utilities ├── scenes/ # Godot scenes ├── assets/ # Assets (images, sounds, etc.) ├── configuration/ # Configuration files └── addons/ # Godot plugins ├── character-controller/ # Character controller ├── ambientcg/ # PBR texture importer └── fps-hands/ # FPS hands system
+
 
 ## Architecture
-Le projet suit une architecture modulaire avec :
-- Des gestionnaires (Managers) pour les fonctionnalités globales
-- Un système de communication basé sur les événements
-- Une séparation claire des responsabilités
-- Une gestion centralisée des logs
-- Un système de personnage basé sur les capacités (Abilities) :
-  - Marche
-  - Course
-  - Saut
-  - Accroupissement
-  - Vol
-  - Nage
-  - Contrôle aérien
-  - Gestion des pentes
+The project follows a modular architecture with:
+- Managers for global functionalities
+- An event-based communication system
+- A clear separation of concerns
+- Centralized log management
+- A character system based on abilities:
+  - Walking
+  - Running
+  - Jumping
+  - Crouching
+  - Flying
+  - Swimming
+  - Air control
+  - Slope handling
 
-## Prérequis
+## Prerequisites
 - Godot Engine
 - .NET SDK
-- Visual Studio ou VS Code (recommandé)
+- Visual Studio or VS Code (recommended)
 
 ## Installation
-1. Clonez le repository :
-```bash
-git clone https://github.com/votre-username/open-esport-2025.git
-```
-2. Ouvrez le projet dans Godot Engine
-3. Assurez-vous que tous les addons sont correctement installés
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/open-esport-2025.git
 
-## Release : 
--v0.2 (win64):  https://antisys.fr/Games/openesport2025/Open-eSport-2025-v0.2.7z
+    Open the project in Godot Engine.
 
+    Ensure that all addons are correctly installed.
 
-## Contribution
-Les contributions sont les bienvenues ! N'hésitez pas à :
-1. Fork le projet
-2. Créer une branche pour votre fonctionnalité
-3. Commiter vos changements
-4. Pousser vers la branche
-5. Ouvrir une Pull Request
+Release
 
-## Licence
-Ce projet est sous licence GNU General Public License v3.0 (GPL-3.0). Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+    v0.2 (win64): https://antisys.fr/Games/openesport2025/Open-eSport-2025-v0.2.7z
 
-Cette licence garantit que :
-- Le code source est librement accessible
-- Les modifications doivent être partagées sous la même licence
-- Les utilisateurs ont le droit d'utiliser, modifier et distribuer le code
-- Les modifications doivent être documentées
+Contribution
 
-## Crédits
-- [Character Controller](https://github.com/expressobits/character-controller) par Rafael Correa
-- [AmbientCG](https://github.com/mohsenph69/godot-ambientcg) par mohsenph69
-- [FPS Hands](https://codeberg.org/Bytez/godot-fps-hands) par Bytez
+Contributions are welcome! Please follow these steps:
 
-## Support
-Pour toute question ou problème, n'hésitez pas à ouvrir une issue dans le repository GitHub. 
+    Fork the project.
+
+    Create a branch for your feature.
+
+    Commit your changes.
+
+    Push to your branch.
+
+    Open a Pull Request.
+
+License
+
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0). See the LICENSE file for details.
+
+This license ensures that:
+
+    The source code is freely accessible.
+
+    Modifications must be shared under the same license.
+
+    Users have the right to use, modify, and distribute the code.
+
+    Changes must be documented.
+
+Credits
+
+    Character Controller by Rafael Correa
+
+    AmbientCG by mohsenph69
+
+    FPS Hands by Bytez
+
+Support
+
+For any questions or issues, please open an issue in the GitHub repository.
