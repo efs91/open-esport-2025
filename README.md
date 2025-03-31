@@ -86,53 +86,37 @@ The project follows a modular architecture with:
 
 ## Installation
 1. Clone the repository:
-   
-   git clone https://github.com/your-username/open-esport-2025.git
-
-    Open the project in Godot Engine.
-
-    Ensure that all addons are correctly installed.
+```bash
+git clone https://github.com/your-username/open-esport-2025.git
+```
+2. Open the project in Godot Engine
+3. Ensure that all addons are correctly installed
 
 ## Release
-
-    v0.2 (win64): https://antisys.fr/Games/openesport2025/Open-eSport-2025-v0.2.7z
+Latest release (v0.2) for Windows 64-bit:
+- [Download](https://antisys.fr/Games/openesport2025/Open-eSport-2025-v0.2.7z)
 
 ## Contribution
-
 Contributions are welcome! Please follow these steps:
-
-    Fork the project.
-
-    Create a branch for your feature.
-
-    Commit your changes.
-
-    Push to your branch.
-
-    Open a Pull Request.
+1. Fork the project
+2. Create a branch for your feature
+3. Commit your changes
+4. Push to your branch
+5. Open a Pull Request
 
 ## License
-
-This project is licensed under the GNU General Public License v3.0 (GPL-3.0). See the LICENSE file for details.
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0). See the [LICENSE](LICENSE) file for details.
 
 This license ensures that:
-
-    The source code is freely accessible.
-
-    Modifications must be shared under the same license.
-
-    Users have the right to use, modify, and distribute the code.
-
-    Changes must be documented.
+- The source code is freely accessible
+- Modifications must be shared under the same license
+- Users have the right to use, modify, and distribute the code
+- Changes must be documented
 
 ## Credits
-
-    Character Controller by Rafael Correa
-
-    AmbientCG by mohsenph69
-
-    FPS Hands by Bytez
+- [Character Controller](https://github.com/expressobits/character-controller) by Rafael Correa
+- [AmbientCG](https://github.com/mohsenph69/godot-ambientcg) by mohsenph69
+- [FPS Hands](https://codeberg.org/Bytez/godot-fps-hands) by Bytez
 
 ## Support
-
 For any questions or issues, please open an issue in the GitHub repository.
