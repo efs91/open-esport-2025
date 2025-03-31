@@ -1,0 +1,15 @@
+{
+    "MENU_STANDARD_GAMES": "Jocuri Standard",
+    "MENU_RANKED_GAMES": "Jocuri Clasificate",
+    "MENU_RANKINGS": "Clasamente",
+    "MENU_SETTINGS": "Setări",
+    "MENU_QUIT": "Ieșire",
+    "MENU_BACK": "Înapoi",
+    "MENU_MODULES": "Module",
+    "MAP_1": "Hartă 1",
+    "SETTINGS_LANGUAGE": "Limbă",
+    "SETTINGS_AVAILABLE_MODULES": "Module Disponibile",
+    "SETTINGS_INSTALLED_MODULES": "Module Instalate",
+    "MENU_MAIN": "Înapoi la Meniul Principal",
+    "MENU_INGAME": "Meniul Jocului"
+}

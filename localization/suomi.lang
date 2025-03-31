@@ -1,0 +1,13 @@
+{
+    "MENU_STANDARD_GAMES": "Vakiopelejä",
+    "MENU_RANKED_GAMES": "Arvostellut pelit",
+    "MENU_RANKINGS": "Rankingit",
+    "MENU_SETTINGS": "Asetukset",
+    "MENU_QUIT": "Poistu",
+    "MENU_BACK": "Takaisin",
+    "MENU_MODULES": "Moduulit",
+    "MAP_1": "Kartta 1",
+    "SETTINGS_LANGUAGE": "Kieli",
+    "SETTINGS_AVAILABLE_MODULES": "Saatavilla olevat moduulit",
+    "SETTINGS_INSTALLED_MODULES": "Asennetut moduulit"
+}

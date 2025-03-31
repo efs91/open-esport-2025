@@ -1,0 +1,13 @@
+{
+    "MENU_STANDARD_GAMES": "Standard játékok",
+    "MENU_RANKED_GAMES": "Rangsorolt játékok",
+    "MENU_RANKINGS": "Ranglisták",
+    "MENU_SETTINGS": "Beállítások",
+    "MENU_QUIT": "Kilépés",
+    "MENU_BACK": "Vissza",
+    "MENU_MODULES": "Modulok",
+    "MAP_1": "Térkép 1",
+    "SETTINGS_LANGUAGE": "Nyelv",
+    "SETTINGS_AVAILABLE_MODULES": "Elérhető modulok",
+    "SETTINGS_INSTALLED_MODULES": "Telepített modulok"
+}

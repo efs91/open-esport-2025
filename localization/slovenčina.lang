@@ -1,0 +1,15 @@
+{
+    "MENU_STANDARD_GAMES": "Štandardné hry",
+    "MENU_RANKED_GAMES": "Hodnotené hry",
+    "MENU_RANKINGS": "Rebríčky",
+    "MENU_SETTINGS": "Nastavenia",
+    "MENU_QUIT": "Ukončiť",
+    "MENU_BACK": "Späť",
+    "MENU_MODULES": "Moduly",
+    "MAP_1": "Mapa 1",
+    "SETTINGS_LANGUAGE": "Jazyk",
+    "SETTINGS_AVAILABLE_MODULES": "Dostupné moduly",
+    "SETTINGS_INSTALLED_MODULES": "Nainštalované moduly",
+    "MENU_MAIN": "Späť na Hlavné Menu",
+    "MENU_INGAME": "Menu Hry"
+}

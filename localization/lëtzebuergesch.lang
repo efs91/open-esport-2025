@@ -1,0 +1,15 @@
+{
+    "MENU_STANDARD_GAMES": "Standardspill",
+    "MENU_RANKED_GAMES": "Ranking Spill",
+    "MENU_RANKINGS": "Rankingen",
+    "MENU_SETTINGS": "Astellungen",
+    "MENU_QUIT": "Ophale",
+    "MENU_BACK": "Zréck",
+    "MENU_MODULES": "Moduler",
+    "MAP_1": "Kaart 1",
+    "SETTINGS_LANGUAGE": "Sprooch",
+    "SETTINGS_AVAILABLE_MODULES": "Verfügbar Moduler",
+    "SETTINGS_INSTALLED_MODULES": "Installéiert Moduler",
+    "MENU_MAIN": "Zréck bei d'Haaptmenü",
+    "MENU_INGAME": "Spillmenü"
+}

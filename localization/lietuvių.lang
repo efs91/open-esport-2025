@@ -1,0 +1,13 @@
+{
+    "MENU_STANDARD_GAMES": "Standartiniai žaidimai",
+    "MENU_RANKED_GAMES": "Reitinguoti žaidimai",
+    "MENU_RANKINGS": "Reitingai",
+    "MENU_SETTINGS": "Nustatymai",
+    "MENU_QUIT": "Išeiti",
+    "MENU_BACK": "Atgal",
+    "MENU_MODULES": "Moduliai",
+    "MAP_1": "Žemėlapis 1",
+    "SETTINGS_LANGUAGE": "Kalba",
+    "SETTINGS_AVAILABLE_MODULES": "Prieinami moduliai",
+    "SETTINGS_INSTALLED_MODULES": "Įdiegti moduliai"
+}

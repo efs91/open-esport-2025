@@ -1,0 +1,13 @@
+{
+    "MENU_STANDARD_GAMES": "Standarta spēles",
+    "MENU_RANKED_GAMES": "Rangotās spēles",
+    "MENU_RANKINGS": "Ranglistes",
+    "MENU_SETTINGS": "Iestatījumi",
+    "MENU_QUIT": "Iziet",
+    "MENU_BACK": "Atpakaļ",
+    "MENU_MODULES": "Moduļi",
+    "MAP_1": "Karte 1",
+    "SETTINGS_LANGUAGE": "Valoda",
+    "SETTINGS_AVAILABLE_MODULES": "Pieejamie moduļi",
+    "SETTINGS_INSTALLED_MODULES": "Instalētie moduļi"
+}

@@ -1,0 +1,15 @@
+{
+    "MENU_STANDARD_GAMES": "Cluichí Caighdeánacha",
+    "MENU_RANKED_GAMES": "Cluichí Rangaithe",
+    "MENU_RANKINGS": "Ranguithe",
+    "MENU_SETTINGS": "Socruithe",
+    "MENU_QUIT": "Scoir",
+    "MENU_BACK": "Ar ais",
+    "MENU_MODULES": "Modúil",
+    "MAP_1": "Léarscáil 1",
+    "SETTINGS_LANGUAGE": "Teanga",
+    "SETTINGS_AVAILABLE_MODULES": "Modúil Ar Fáil",
+    "SETTINGS_INSTALLED_MODULES": "Modúil Suiteáilte",
+    "MENU_MAIN": "Fill ar an bPríomhchlár",
+    "MENU_INGAME": "Clár an Chluiche"
+}

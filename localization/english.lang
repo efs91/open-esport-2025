@@ -1,0 +1,15 @@
+{
+    "MENU_STANDARD_GAMES": "Standard Games",
+    "MENU_RANKED_GAMES": "Ranked Games",
+    "MENU_RANKINGS": "Rankings",
+    "MENU_SETTINGS": "Settings",
+    "MENU_QUIT": "Quit",
+    "MENU_BACK": "Back",
+    "MENU_MODULES": "Modules",
+    "MAP_1": "Map 1",
+    "SETTINGS_LANGUAGE": "Language",
+    "SETTINGS_AVAILABLE_MODULES": "Available Modules",
+    "SETTINGS_INSTALLED_MODULES": "Installed Modules",
+    "MENU_MAIN": "Return to Main Menu",
+    "MENU_INGAME": "In-Game Menu"
+} 

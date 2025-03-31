@@ -1,0 +1,13 @@
+{
+    "MENU_STANDARD_GAMES": "Стандартни игри",
+    "MENU_RANKED_GAMES": "Класирани игри",
+    "MENU_RANKINGS": "Класации",
+    "MENU_SETTINGS": "Настройки",
+    "MENU_QUIT": "Изход",
+    "MENU_BACK": "Назад",
+    "MENU_MODULES": "Модули",
+    "MAP_1": "Карта 1",
+    "SETTINGS_LANGUAGE": "Език",
+    "SETTINGS_AVAILABLE_MODULES": "Налични модули",
+    "SETTINGS_INSTALLED_MODULES": "Инсталирани модули"
+}

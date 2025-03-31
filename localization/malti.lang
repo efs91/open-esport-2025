@@ -1,0 +1,15 @@
+{
+    "MENU_STANDARD_GAMES": "Logħob Standard",
+    "MENU_RANKED_GAMES": "Logħob Klassifikat",
+    "MENU_RANKINGS": "Klassifiki",
+    "MENU_SETTINGS": "Settings",
+    "MENU_QUIT": "Oħroġ",
+    "MENU_BACK": "Lura",
+    "MENU_MODULES": "Moduli",
+    "MAP_1": "Mappa 1",
+    "SETTINGS_LANGUAGE": "Lingwa",
+    "SETTINGS_AVAILABLE_MODULES": "Moduli Disponibbli",
+    "SETTINGS_INSTALLED_MODULES": "Moduli Installati",
+    "MENU_MAIN": "Lura għall-Menu Prinċipali",
+    "MENU_INGAME": "Menu tal-Logħba"
+}

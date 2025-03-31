@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using Openesport.Utils;
+using Openesport.Managers;
 
 public partial class Main : Node
 {
@@ -9,11 +10,14 @@ public partial class Main : Node
 	private MenuManager _menuManager;
 	private InputManager _inputManager;
 	private LogManager _logManager;
+	public static string language = "français";
+	private static string _currentScene = "res://scenes/menus/MainMenu.tscn";
 
 	public override void _Ready()
 	{
 		_logManager = GetNode<LogManager>(GlobalPaths.Managers.LOG_MANAGER);
 		_logManager.Info("[Main] _Ready appelé");
+		LocalizationManager.LoadLanguage(language);
 		InitializeManagers();
 		StartGame();
 	}

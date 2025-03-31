@@ -1,0 +1,13 @@
+{
+    "MENU_STANDARD_GAMES": "Standardne igre",
+    "MENU_RANKED_GAMES": "Rangirane igre",
+    "MENU_RANKINGS": "Poredak",
+    "MENU_SETTINGS": "Postavke",
+    "MENU_QUIT": "Izlaz",
+    "MENU_BACK": "Natrag",
+    "MENU_MODULES": "Moduli",
+    "MAP_1": "Karta 1",
+    "SETTINGS_LANGUAGE": "Jezik",
+    "SETTINGS_AVAILABLE_MODULES": "Dostupni moduli",
+    "SETTINGS_INSTALLED_MODULES": "Instalirani moduli"
+}

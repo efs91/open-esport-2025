@@ -1,0 +1,15 @@
+{
+    "MENU_STANDARD_GAMES": "Standardmängud",
+    "MENU_RANKED_GAMES": "Edetabeli mängud",
+    "MENU_RANKINGS": "Edetabelid",
+    "MENU_SETTINGS": "Seaded",
+    "MENU_QUIT": "Välju",
+    "MENU_BACK": "Tagasi",
+    "MENU_MODULES": "Moodulid",
+    "MAP_1": "Kaart 1",
+    "SETTINGS_LANGUAGE": "Keel",
+    "SETTINGS_AVAILABLE_MODULES": "Saadaval moodulid",
+    "SETTINGS_INSTALLED_MODULES": "Paigaldatud moodulid",
+    "MENU_MAIN": "Tagasi põhimenüüsse",
+    "MENU_INGAME": "Mängumenüü"
+}

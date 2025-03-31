@@ -1,0 +1,15 @@
+{
+    "MENU_STANDARD_GAMES": "Standaardspellen",
+    "MENU_RANKED_GAMES": "Gerangschikte spellen",
+    "MENU_RANKINGS": "Ranglijsten",
+    "MENU_SETTINGS": "Instellingen",
+    "MENU_QUIT": "Afsluiten",
+    "MENU_BACK": "Terug",
+    "MENU_MODULES": "Modules",
+    "MAP_1": "Kaart 1",
+    "SETTINGS_LANGUAGE": "Taal",
+    "SETTINGS_AVAILABLE_MODULES": "Beschikbare modules",
+    "SETTINGS_INSTALLED_MODULES": "Geïnstalleerde modules",
+    "MENU_MAIN": "Terug naar hoofdmenu",
+    "MENU_INGAME": "Spelmenu"
+}

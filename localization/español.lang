@@ -1,0 +1,15 @@
+{
+    "MENU_STANDARD_GAMES": "Juegos Estándar",
+    "MENU_RANKED_GAMES": "Juegos Clasificados",
+    "MENU_RANKINGS": "Clasificaciones",
+    "MENU_SETTINGS": "Configuración",
+    "MENU_QUIT": "Salir",
+    "MENU_BACK": "Volver",
+    "MENU_MODULES": "Módulos",
+    "MAP_1": "Mapa 1",
+    "SETTINGS_LANGUAGE": "Idioma",
+    "SETTINGS_AVAILABLE_MODULES": "Módulos Disponibles",
+    "SETTINGS_INSTALLED_MODULES": "Módulos Instalados",
+    "MENU_MAIN": "Volver al Menú Principal",
+    "MENU_INGAME": "Menú del Juego"
+}

@@ -1,0 +1,15 @@
+{
+    "MENU_STANDARD_GAMES": "Standardspiele",
+    "MENU_RANKED_GAMES": "Ranglistenspiele",
+    "MENU_RANKINGS": "Ranglisten",
+    "MENU_SETTINGS": "Einstellungen",
+    "MENU_QUIT": "Beenden",
+    "MENU_BACK": "Zurück",
+    "MENU_MODULES": "Module",
+    "MAP_1": "Karte 1",
+    "SETTINGS_LANGUAGE": "Sprache",
+    "SETTINGS_AVAILABLE_MODULES": "Verfügbare Module",
+    "SETTINGS_INSTALLED_MODULES": "Installierte Module",
+    "MENU_MAIN": "Zum Hauptmenü",
+    "MENU_INGAME": "Spielmenü"
+}

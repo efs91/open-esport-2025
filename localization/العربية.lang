@@ -1,0 +1,13 @@
+{
+    "MENU_STANDARD_GAMES": "ألعاب عادية",
+    "MENU_RANKED_GAMES": "ألعاب مرتبة",
+    "MENU_RANKINGS": "التصنيفات",
+    "MENU_SETTINGS": "الإعدادات",
+    "MENU_QUIT": "خروج",
+    "MENU_BACK": "عودة",
+    "MENU_MODULES": "الوحدات",
+    "MAP_1": "الخريطة 1",
+    "SETTINGS_LANGUAGE": "اللغة",
+    "SETTINGS_AVAILABLE_MODULES": "الوحدات المتاحة",
+    "SETTINGS_INSTALLED_MODULES": "الوحدات المثبتة"
+}

@@ -1,0 +1,13 @@
+{
+    "MENU_STANDARD_GAMES": "Standardne igre",
+    "MENU_RANKED_GAMES": "Uvrščene igre",
+    "MENU_RANKINGS": "Uvrstitve",
+    "MENU_SETTINGS": "Nastavitve",
+    "MENU_QUIT": "Izhod",
+    "MENU_BACK": "Nazaj",
+    "MENU_MODULES": "Moduli",
+    "MAP_1": "Zemljevid 1",
+    "SETTINGS_LANGUAGE": "Jezik",
+    "SETTINGS_AVAILABLE_MODULES": "Razpoložljivi moduli",
+    "SETTINGS_INSTALLED_MODULES": "Nameščeni moduli"
+}

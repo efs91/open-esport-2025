@@ -1,0 +1,13 @@
+{
+    "MENU_STANDARD_GAMES": "Standardspil",
+    "MENU_RANKED_GAMES": "Rangerede spil",
+    "MENU_RANKINGS": "Ranglister",
+    "MENU_SETTINGS": "Indstillinger",
+    "MENU_QUIT": "Afslut",
+    "MENU_BACK": "Tilbage",
+    "MENU_MODULES": "Moduler",
+    "MAP_1": "Kort 1",
+    "SETTINGS_LANGUAGE": "Sprog",
+    "SETTINGS_AVAILABLE_MODULES": "Tilgængelige moduler",
+    "SETTINGS_INSTALLED_MODULES": "Installerede moduler"
+}

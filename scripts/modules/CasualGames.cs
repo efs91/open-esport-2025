@@ -4,6 +4,7 @@ using System.IO;
 using Openesport.Modules;
 using Openesport.Utils;
 using Openesport.Structures;
+using Openesport.Managers;
 
 
 namespace Openesport.Modules
@@ -29,18 +30,16 @@ namespace Openesport.Modules
 			LoadConfiguration();
 			
 			// Créer et ajouter le bouton Casual Games
-			var entry = new MenuEntry
-			{
-				Id = 5,
-				Name = "Casual Games",
-				Description = "Jouer une partie casual",
-				IconPath = "",
-				Action = "start_casual_game",
-				ParentId = 0,
-				UiPath = "res://scenes/ui/menu/buttons/standard_button.tscn",
-				Poids = 10
-			};
-			_menuManager.AddMenuEntry(entry);
+			var element = new MenuElement(
+				id: 1249797512,
+				name: "MENU_STANDARD_GAMES",
+				type: MenuElementType.Button,
+				parentId: 0,
+				poids: 10,
+				uiPath: "res://scenes/ui/menu/buttons/standard_button.tscn"
+			);
+			element.Properties["action"] = "start_casual_game";
+			_menuManager.AddElement(element);
 			
 			// S'enregistrer comme gestionnaire de l'action start_casual_game
 			_menuManager.RegisterActionHandler("start_casual_game", this);

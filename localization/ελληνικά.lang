@@ -1,0 +1,13 @@
+{
+    "MENU_STANDARD_GAMES": "Τυπικά παιχνίδια",
+    "MENU_RANKED_GAMES": "Βαθμολογημένα παιχνίδια",
+    "MENU_RANKINGS": "Κατατάξεις",
+    "MENU_SETTINGS": "Ρυθμίσεις",
+    "MENU_QUIT": "Έξοδος",
+    "MENU_BACK": "Πίσω",
+    "MENU_MODULES": "Μονάδες",
+    "MAP_1": "Χάρτης 1",
+    "SETTINGS_LANGUAGE": "Γλώσσα",
+    "SETTINGS_AVAILABLE_MODULES": "Διαθέσιμες μονάδες",
+    "SETTINGS_INSTALLED_MODULES": "Εγκατεστημένες μονάδες"
+}
