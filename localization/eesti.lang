@@ -11,5 +11,6 @@
     "SETTINGS_AVAILABLE_MODULES": "Saadaval moodulid",
     "SETTINGS_INSTALLED_MODULES": "Paigaldatud moodulid",
     "MENU_MAIN": "Tagasi põhimenüüsse",
-    "MENU_INGAME": "Mängumenüü"
+    "MENU_INGAME": "Mängumenüü",
+    "MENU_SETTINGS_KEYBOARD": "Klaviatuur"
 }

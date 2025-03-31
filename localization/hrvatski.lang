@@ -9,5 +9,6 @@
     "MAP_1": "Karta 1",
     "SETTINGS_LANGUAGE": "Jezik",
     "SETTINGS_AVAILABLE_MODULES": "Dostupni moduli",
-    "SETTINGS_INSTALLED_MODULES": "Instalirani moduli"
+    "SETTINGS_INSTALLED_MODULES": "Instalirani moduli",
+    "MENU_SETTINGS_KEYBOARD": "Tipkovnica"
 }

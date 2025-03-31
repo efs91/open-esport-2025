@@ -11,5 +11,6 @@
     "SETTINGS_AVAILABLE_MODULES": "Moduli Disponibbli",
     "SETTINGS_INSTALLED_MODULES": "Moduli Installati",
     "MENU_MAIN": "Lura għall-Menu Prinċipali",
-    "MENU_INGAME": "Menu tal-Logħba"
+    "MENU_INGAME": "Menu tal-Logħba",
+    "MENU_SETTINGS_KEYBOARD": "Tastiera"
 }

@@ -11,5 +11,6 @@
     "SETTINGS_AVAILABLE_MODULES": "Verfügbar Moduler",
     "SETTINGS_INSTALLED_MODULES": "Installéiert Moduler",
     "MENU_MAIN": "Zréck bei d'Haaptmenü",
-    "MENU_INGAME": "Spillmenü"
+    "MENU_INGAME": "Spillmenü",
+    "MENU_SETTINGS_KEYBOARD": "Tastatur"
 }

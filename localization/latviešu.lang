@@ -9,5 +9,6 @@
     "MAP_1": "Karte 1",
     "SETTINGS_LANGUAGE": "Valoda",
     "SETTINGS_AVAILABLE_MODULES": "Pieejamie moduļi",
-    "SETTINGS_INSTALLED_MODULES": "Instalētie moduļi"
+    "SETTINGS_INSTALLED_MODULES": "Instalētie moduļi",
+    "MENU_SETTINGS_KEYBOARD": "Tastatūra"
 }

@@ -9,5 +9,6 @@
     "MAP_1": "Žemėlapis 1",
     "SETTINGS_LANGUAGE": "Kalba",
     "SETTINGS_AVAILABLE_MODULES": "Prieinami moduliai",
-    "SETTINGS_INSTALLED_MODULES": "Įdiegti moduliai"
+    "SETTINGS_INSTALLED_MODULES": "Įdiegti moduliai",
+    "MENU_SETTINGS_KEYBOARD": "Klaviatūra"
 }

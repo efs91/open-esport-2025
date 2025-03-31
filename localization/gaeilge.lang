@@ -11,5 +11,6 @@
     "SETTINGS_AVAILABLE_MODULES": "Modúil Ar Fáil",
     "SETTINGS_INSTALLED_MODULES": "Modúil Suiteáilte",
     "MENU_MAIN": "Fill ar an bPríomhchlár",
-    "MENU_INGAME": "Clár an Chluiche"
+    "MENU_INGAME": "Clár an Chluiche",
+    "MENU_SETTINGS_KEYBOARD": "Méarchlár"
 }

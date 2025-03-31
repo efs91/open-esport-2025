@@ -11,5 +11,6 @@
     "SETTINGS_AVAILABLE_MODULES": "Module Disponibile",
     "SETTINGS_INSTALLED_MODULES": "Module Instalate",
     "MENU_MAIN": "Înapoi la Meniul Principal",
-    "MENU_INGAME": "Meniul Jocului"
+    "MENU_INGAME": "Meniul Jocului",
+    "MENU_SETTINGS_KEYBOARD": "Tastatură"
 }

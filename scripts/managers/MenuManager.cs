@@ -435,8 +435,8 @@ public partial class MenuManager : Control
     {
         Button button = new Button();
         button.CustomMinimumSize = new Vector2(250, 50);
-        button.Text = "Retour";
-        ApplyCommonStyles(button, new MenuElement(-1, "Retour", MenuElementType.Button));
+        button.Text = LocalizationManager.GetTranslation("MENU_BACK");
+        ApplyCommonStyles(button, new MenuElement(-1, "MENU_BACK", MenuElementType.Button));
         return button;
     }
 
@@ -596,6 +596,10 @@ public partial class MenuManager : Control
                         _logManager.Info($"[MenuManager] Ancienne langue : {Main.language}");
                         Main.language = selectedOption.value;
                         _logManager.Info($"[MenuManager] Nouvelle langue : {Main.language}");
+                    
+                        
+                        // Recharger les traductions avec la nouvelle langue
+                        LocalizationManager.LoadLanguage(Main.language);
                         
                         // Recréer le menu pour mettre à jour les textes
                         DisplaySubMenu(0);

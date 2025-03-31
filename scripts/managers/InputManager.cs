@@ -98,6 +98,18 @@ public partial class InputManager : Node
 			if (mouseButton.Pressed)
 			{
 				_inputEvents.UpdateMouseButton((int)mouseButton.ButtonIndex, true);
+				
+				// Gestion de la molette de souris
+				if (mouseButton.ButtonIndex == MouseButton.WheelUp)
+				{
+					//_logManager.Info("[InputManager] Molette vers le haut");
+					_inputEvents.TriggerSwitchWeaponUp();
+				}
+				else if (mouseButton.ButtonIndex == MouseButton.WheelDown)
+				{
+					_logManager.Info("[InputManager] Molette vers le bas");
+					_inputEvents.TriggerSwitchWeaponDown();
+				}
 			}
 			else
 			{

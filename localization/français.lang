@@ -3,6 +3,7 @@
     "MENU_RANKED_GAMES": "Parties Classées",
     "MENU_RANKINGS": "Classements",
     "MENU_SETTINGS": "Paramètres",
+    "MENU_SETTINGS_KEYBOARD" : "Clavier",
     "MENU_QUIT": "Quitter",
     "MENU_BACK": "Retour",
     "MENU_MODULES": "Modules",
@@ -12,4 +13,5 @@
     "SETTINGS_INSTALLED_MODULES": "Modules Installés",
     "MENU_MAIN": "Retour au menu principal",
     "MENU_INGAME": "Menu In-Game"
+
 } 

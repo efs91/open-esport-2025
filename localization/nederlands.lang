@@ -11,5 +11,6 @@
     "SETTINGS_AVAILABLE_MODULES": "Beschikbare modules",
     "SETTINGS_INSTALLED_MODULES": "Geïnstalleerde modules",
     "MENU_MAIN": "Terug naar hoofdmenu",
-    "MENU_INGAME": "Spelmenu"
+    "MENU_INGAME": "Spelmenu",
+    "MENU_SETTINGS_KEYBOARD": "Toetsenbord"
 }

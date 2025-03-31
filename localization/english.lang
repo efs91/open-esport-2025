@@ -11,5 +11,6 @@
     "SETTINGS_AVAILABLE_MODULES": "Available Modules",
     "SETTINGS_INSTALLED_MODULES": "Installed Modules",
     "MENU_MAIN": "Return to Main Menu",
-    "MENU_INGAME": "In-Game Menu"
+    "MENU_INGAME": "In-Game Menu",
+    "MENU_SETTINGS_KEYBOARD": "Keyboard"
 } 

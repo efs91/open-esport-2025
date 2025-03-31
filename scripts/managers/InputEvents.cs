@@ -15,6 +15,8 @@ public class InputEvents
     public event Action<bool> OnShootStateChanged;
     public event Action OnReloadTriggered;
     public event Action OnSwitchWeaponTriggered;
+    public event Action OnSwitchWeaponUpTriggered;
+    public event Action OnSwitchWeaponDownTriggered;
     public event Action<bool> OnInGameMenuToggle;
 
     // Événements de souris
@@ -76,6 +78,19 @@ public class InputEvents
     public void TriggerSwitchWeapon()
     {
         OnSwitchWeaponTriggered?.Invoke();
+        GD.Print("[InputEvents] TriggerSwitchWeapon appelé");
+    }
+
+    public void TriggerSwitchWeaponUp()
+    {
+        OnSwitchWeaponUpTriggered?.Invoke();
+        GD.Print("[InputEvents] TriggerSwitchWeaponUp appelé");
+    }
+
+    public void TriggerSwitchWeaponDown()
+    {
+        OnSwitchWeaponDownTriggered?.Invoke();
+        GD.Print("[InputEvents] TriggerSwitchWeaponDown appelé");
     }
 
     public void TriggerInGameMenuToggle(bool isEnabled)

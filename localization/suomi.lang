@@ -9,5 +9,6 @@
     "MAP_1": "Kartta 1",
     "SETTINGS_LANGUAGE": "Kieli",
     "SETTINGS_AVAILABLE_MODULES": "Saatavilla olevat moduulit",
-    "SETTINGS_INSTALLED_MODULES": "Asennetut moduulit"
+    "SETTINGS_INSTALLED_MODULES": "Asennetut moduulit",
+    "MENU_SETTINGS_KEYBOARD": "Näppäimistö"
 }

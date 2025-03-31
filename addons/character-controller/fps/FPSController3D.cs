@@ -80,6 +80,8 @@ public partial class FPSController3D : CharacterController3D
         _inputEvents.OnCrouchStateChanged += OnCrouchChanged;
         _inputEvents.OnJumpStateChanged += OnJumpChanged;
         _inputEvents.OnMouseMotionChanged += OnMouseMotion;
+        _inputEvents.OnSwitchWeaponUpTriggered += OnSwitchWeaponUpTriggered;
+        _inputEvents.OnSwitchWeaponDownTriggered += OnSwitchWeaponDownTriggered;
     }
 
     // Configure mouse sensitivity, rotation limit angle and head bob
@@ -156,5 +158,15 @@ public partial class FPSController3D : CharacterController3D
         {
             _inputManager.MouseMotion -= OnMouseMotion;
         }
+    }
+
+    public void OnSwitchWeaponUpTriggered()
+    {
+        GD.Print("[FPSController3D] OnSwitchWeaponUpTriggered appelé");
+    }
+
+    public void OnSwitchWeaponDownTriggered()
+    {
+        GD.Print("[FPSController3D] OnSwitchWeaponDownTriggered appelé");
     }
 }

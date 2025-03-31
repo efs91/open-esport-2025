@@ -11,5 +11,6 @@
     "SETTINGS_AVAILABLE_MODULES": "Dostupné moduly",
     "SETTINGS_INSTALLED_MODULES": "Nainštalované moduly",
     "MENU_MAIN": "Späť na Hlavné Menu",
-    "MENU_INGAME": "Menu Hry"
+    "MENU_INGAME": "Menu Hry",
+    "MENU_SETTINGS_KEYBOARD": "Klávesnica"
 }

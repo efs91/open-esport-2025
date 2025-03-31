@@ -11,5 +11,6 @@
     "SETTINGS_AVAILABLE_MODULES": "Dostępne Moduły",
     "SETTINGS_INSTALLED_MODULES": "Zainstalowane Moduły",
     "MENU_MAIN": "Powrót do Menu Głównego",
-    "MENU_INGAME": "Menu Gry"
+    "MENU_INGAME": "Menu Gry",
+    "MENU_SETTINGS_KEYBOARD": "Klawiatura"
 }

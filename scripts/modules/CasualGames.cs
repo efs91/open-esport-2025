@@ -124,7 +124,7 @@ namespace Openesport.Modules
 
 				// Charger le personnage
 				_logManager.Info($"[{ModuleName}] Chargement du personnage");
-				var characterScene = GD.Load<PackedScene>("res://addons/character-controller/example/main/player.tscn");
+				var characterScene = GD.Load<PackedScene>("res://scenes/modules/Player/player.tscn");
 				var character = characterScene.Instantiate<FPSController3D>();
 
 				// Ajouter le personnage à la scène AVANT de définir sa position

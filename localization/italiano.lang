@@ -11,5 +11,6 @@
     "SETTINGS_AVAILABLE_MODULES": "Moduli Disponibili",
     "SETTINGS_INSTALLED_MODULES": "Moduli Installati",
     "MENU_MAIN": "Torna al Menu Principale",
-    "MENU_INGAME": "Menu di Gioco"
+    "MENU_INGAME": "Menu di Gioco",
+    "MENU_SETTINGS_KEYBOARD": "Tastiera"
 }

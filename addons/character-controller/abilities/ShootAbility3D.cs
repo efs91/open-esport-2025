@@ -12,6 +12,7 @@ public partial class ShootAbility3D : MovementAbility3D
 	private AnimationTree _animationTree;
 	private Node3D _muzzlePoint;
 	private Timer _shootTimer;
+	private PackedScene _fpsAkScene;
 
 	public override void _Ready()
 	{
@@ -26,10 +27,17 @@ public partial class ShootAbility3D : MovementAbility3D
 		_shootTimer.Timeout += OnShootTimerTimeout;
 		AddChild(_shootTimer);
 		
-		// Récupérer le fps-ak et son AnimationTree
-		var fpsAk = GetNode<Node3D>("../Head/Camera/fps-ak");
-		if (fpsAk != null)
+		// Charger la scène fps-ak
+		_fpsAkScene = GD.Load<PackedScene>("res://addons/fps-hands/fps-ak/fps-ak.tscn");
+		
+		// Récupérer le WeaponHolder
+		var weaponHolder = GetNode<Node3D>("../Head/Camera/WeaponHolder");
+		if (weaponHolder != null)
 		{
+			// Instancier l'arme
+			var fpsAk = _fpsAkScene.Instantiate<Node3D>();
+			weaponHolder.AddChild(fpsAk);
+			
 			_animationTree = fpsAk.GetNode<AnimationTree>("AnimationTree");
 			if (_animationTree == null)
 			{
@@ -49,7 +57,7 @@ public partial class ShootAbility3D : MovementAbility3D
 		}
 		else
 		{
-			GD.PrintErr("fps-ak non trouvé dans la scène");
+			GD.PrintErr("WeaponHolder non trouvé dans la scène");
 		}
 	}
 
