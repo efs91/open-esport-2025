@@ -46,7 +46,7 @@ The project is currently in its initial development phase with the following fea
   - [FPS Hands](https://codeberg.org/Bytez/godot-fps-hands) – FPS hands system
 
 ## Project Structure
-
+```
 open-esport-2025/
 ├── scripts/                  # Source code
 │   ├── managers/             # Global managers
@@ -61,7 +61,7 @@ open-esport-2025/
     ├── character-controller/ # Character controller
     ├── ambientcg/            # PBR texture importer
     └── fps-hands/            # FPS hands system
-
+```
 
 ## Architecture
 The project follows a modular architecture with:
