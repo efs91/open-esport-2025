@@ -93,11 +93,11 @@ The project follows a modular architecture with:
 
     Ensure that all addons are correctly installed.
 
-Release
+## Release
 
     v0.2 (win64): https://antisys.fr/Games/openesport2025/Open-eSport-2025-v0.2.7z
 
-Contribution
+## Contribution
 
 Contributions are welcome! Please follow these steps:
 
@@ -111,7 +111,7 @@ Contributions are welcome! Please follow these steps:
 
     Open a Pull Request.
 
-License
+## License
 
 This project is licensed under the GNU General Public License v3.0 (GPL-3.0). See the LICENSE file for details.
 
@@ -125,7 +125,7 @@ This license ensures that:
 
     Changes must be documented.
 
-Credits
+## Credits
 
     Character Controller by Rafael Correa
 
@@ -133,6 +133,6 @@ Credits
 
     FPS Hands by Bytez
 
-Support
+## Support
 
 For any questions or issues, please open an issue in the GitHub repository.
