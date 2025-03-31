@@ -86,7 +86,7 @@ The project follows a modular architecture with:
 
 ## Installation
 1. Clone the repository:
-   ```bash
+   
    git clone https://github.com/your-username/open-esport-2025.git
 
     Open the project in Godot Engine.
