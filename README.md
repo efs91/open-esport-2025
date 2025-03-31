@@ -47,7 +47,20 @@ The project is currently in its initial development phase with the following fea
 
 ## Project Structure
 
-open-esport-2025/ ├── scripts/ │ ├── managers/ # Global managers │ ├── modules/ # Functional modules │ ├── structures/ # Data structures │ ├── ui/ # User interface components │ └── utils/ # Utilities ├── scenes/ # Godot scenes ├── assets/ # Assets (images, sounds, etc.) ├── configuration/ # Configuration files └── addons/ # Godot plugins ├── character-controller/ # Character controller ├── ambientcg/ # PBR texture importer └── fps-hands/ # FPS hands system
+open-esport-2025/
+├── scripts/                  # Source code
+│   ├── managers/             # Global managers
+│   ├── modules/              # Functional modules
+│   ├── structures/           # Data structures
+│   ├── ui/                   # User interface components
+│   └── utils/                # Utilities
+├── scenes/                   # Godot scenes
+├── assets/                   # Assets (images, sounds, etc.)
+├── configuration/            # Configuration files
+└── addons/                   # Godot plugins
+    ├── character-controller/ # Character controller
+    ├── ambientcg/            # PBR texture importer
+    └── fps-hands/            # FPS hands system
 
 
 ## Architecture
