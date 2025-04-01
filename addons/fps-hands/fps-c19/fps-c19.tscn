@@ -11,7 +11,7 @@ animation = &"hide"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rjn55"]
 animation = &"idle"
 use_custom_timeline = true
-timeline_length = 8.0
+timeline_length = 0.0
 stretch_time_scale = true
 start_offset = 0.0
 loop_mode = 1
@@ -88,7 +88,7 @@ metadata/ammo_type = "9mm"
 [node name="Skeleton3D" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4" index="0"]
 bones/1/rotation = Quaternion(0.647851, -0.450134, -0.57957, -0.20437)
 bones/1/scale = Vector3(1, 1, 1)
-bones/2/rotation = Quaternion(0.383405, 0.43908, -0.202722, 0.786838)
+bones/2/rotation = Quaternion(0.383404, 0.43908, -0.202722, 0.786838)
 bones/3/rotation = Quaternion(0.0406384, 0.0616158, -5.20699e-11, 0.997272)
 bones/4/rotation = Quaternion(0.21923, 0.24415, -0.0868004, 0.940635)
 bones/5/rotation = Quaternion(-0.0383057, -0.154277, -0.190095, 0.968811)
@@ -111,39 +111,40 @@ bones/21/rotation = Quaternion(0.144577, 0.875905, 0.0661047, 0.455541)
 bones/21/scale = Vector3(1, 1, 1)
 bones/22/rotation = Quaternion(-0.0215388, -0.269719, -0.00126741, 0.962697)
 bones/22/scale = Vector3(1, 1, 1)
-bones/25/rotation = Quaternion(0.7202, 0.627364, 0.290356, 0.0584811)
+bones/25/rotation = Quaternion(0.718403, 0.627661, 0.293649, 0.0608961)
 bones/25/scale = Vector3(1, 1, 1)
-bones/26/rotation = Quaternion(0.528741, -0.130022, -0.295245, 0.785085)
+bones/26/rotation = Quaternion(0.535618, -0.133249, -0.291414, 0.781304)
 bones/26/scale = Vector3(1, 1, 1)
-bones/27/rotation = Quaternion(-0.184149, -0.0137257, -6.54836e-11, 0.982803)
+bones/27/rotation = Quaternion(-0.193669, -0.00156064, 4.40018e-11, 0.981066)
 bones/27/scale = Vector3(1, 1, 1)
 bones/28/rotation = Quaternion(0.320081, -0.192363, 0.267996, 0.888101)
 bones/28/scale = Vector3(1, 1, 1)
-bones/29/rotation = Quaternion(-0.274805, 0.218295, 0.0709577, 0.9337)
-bones/30/rotation = Quaternion(0.0225579, 0.33118, 0.187686, 0.924438)
+bones/29/rotation = Quaternion(-0.294782, 0.230394, 0.074368, 0.924387)
+bones/30/rotation = Quaternion(0.0293441, 0.390391, 0.18251, 0.9019)
 bones/32/rotation = Quaternion(-0.037403, -0.0217977, -0.380116, 0.923925)
+bones/33/rotation = Quaternion(-0.0145584, 0.200474, -0.0273506, 0.979209)
 bones/33/scale = Vector3(1, 1, 1)
-bones/34/rotation = Quaternion(0.00514568, 0.391922, -0.0174482, 0.919819)
+bones/34/rotation = Quaternion(0.00542768, 0.406772, -0.0173626, 0.913348)
 bones/34/scale = Vector3(1, 1, 1)
 bones/36/rotation = Quaternion(0.0734799, 0.398988, -0.449574, 0.795796)
 bones/37/rotation = Quaternion(-0.0282431, 0.516979, 0.00248208, 0.855528)
-bones/38/rotation = Quaternion(-0.00499381, 0.498057, 0.0204524, 0.866889)
+bones/38/rotation = Quaternion(-0.00544455, 0.517092, 0.020337, 0.855671)
 bones/38/scale = Vector3(1, 1, 1)
 bones/40/rotation = Quaternion(0.50393, 0.858112, -0.0924322, 0.0339821)
 bones/40/scale = Vector3(1, 1, 1)
 bones/41/rotation = Quaternion(0.0227176, 0.870158, 0.107934, -0.480271)
-bones/42/rotation = Quaternion(0.0253146, 0.506029, -0.00896557, 0.862098)
+bones/42/rotation = Quaternion(0.0254385, 0.518131, -0.00860783, 0.854879)
 bones/42/scale = Vector3(1, 1, 1)
 bones/43/rotation = Quaternion(0.00314904, 0.360589, 0.000434484, 0.932719)
 bones/45/rotation = Quaternion(0.0185242, 0.913647, 0.168771, -0.369353)
-bones/46/rotation = Quaternion(0.0162108, 0.587061, -0.0168583, 0.809205)
+bones/46/rotation = Quaternion(0.0165386, 0.602832, -0.0165368, 0.797525)
 bones/47/rotation = Quaternion(0.0255375, 0.363035, -0.00436201, 0.931415)
 
 [node name="Object_7" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4/Skeleton3D" index="0"]
 cast_shadow = 0
 
 [node name="BPpistol" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4" index="2"]
-transform = Transform3D(0.999918, -0.0124637, -0.00298879, 0.0125176, 0.999746, 0.0187601, 0.00275421, -0.018796, 0.999819, 0, 7.96677, 14.5724)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 7.96677, 14.2722)
 
 [node name="base_Mat_0" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4/BPpistol/base" index="0"]
 cast_shadow = 0
@@ -152,7 +153,7 @@ cast_shadow = 0
 transform = Transform3D(0.999954, 0.00959165, 0.000819436, -0.0095779, 0.999837, -0.0153506, -0.000966534, 0.0153421, 0.999882, 0, 7.503, 21.21)
 
 [node name="clip" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4/BPpistol" index="1"]
-transform = Transform3D(1, 4.5454e-17, 1.03162e-17, -3.90694e-17, 0.938129, -0.346285, -2.5418e-17, 0.346285, 0.938129, 0, -3.003, -1.03204)
+transform = Transform3D(1, 4.66943e-17, 1.10638e-17, -3.99741e-17, 0.938129, -0.346285, -2.65488e-17, 0.346285, 0.938129, 0, -3.003, -1.03204)
 
 [node name="clip_Mat_0" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4/BPpistol/clip" index="0"]
 cast_shadow = 0
@@ -161,7 +162,7 @@ cast_shadow = 0
 cast_shadow = 0
 
 [node name="bullet" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4/BPpistol/clip" index="2"]
-transform = Transform3D(1, 7.1035e-08, 7.49814e-08, -9.2605e-08, 0.938129, 0.346285, -4.57438e-08, -0.346285, 0.938129, 0, 8.6124, -0.35837)
+transform = Transform3D(1, 6.41634e-08, 6.7728e-08, -8.36468e-08, 0.938129, 0.346285, -4.13188e-08, -0.346285, 0.938129, 0, 8.6124, -0.35837)
 
 [node name="bullet_Mat_0" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4/BPpistol/clip/bullet" index="0"]
 cast_shadow = 0
@@ -170,7 +171,7 @@ cast_shadow = 0
 cast_shadow = 0
 
 [node name="slide" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4/BPpistol" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0868e-15, 6.95473, 7.90967)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.81671e-16, 6.95473, 7.90967)
 
 [node name="slide_Mat_0" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4/BPpistol/slide" index="0"]
 cast_shadow = 0
