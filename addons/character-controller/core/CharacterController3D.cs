@@ -163,7 +163,7 @@ public partial class CharacterController3D : CharacterBody3D
 	// Minimum time between sprint toggles (in seconds)
 	private const float SPRINT_TOGGLE_COOLDOWN = 0.2f;
 	// Time before sprint is disabled when not moving (in seconds)
-	private const float SPRINT_DISABLE_DELAY = 0.3f;
+	private const float SPRINT_DISABLE_DELAY = 0.0f;
 	// Time since last movement
 	private float _lastMovementTime = 0f;
 	// Last position of the character
@@ -261,10 +261,10 @@ public partial class CharacterController3D : CharacterBody3D
 		}
 		else
 		{
-			// Mode Toggle : sprint si on appuie sur la touche
-			if (inputSprint && Time.GetTicksMsec() - _lastSprintToggleTime > SPRINT_TOGGLE_COOLDOWN * 1000)
+			// Mode Toggle : sprint ne peut être activé que si on appuie sur la touche et qu'il n'est pas déjà actif
+			if (inputSprint && !_isSprintToggled && Time.GetTicksMsec() - _lastSprintToggleTime > SPRINT_TOGGLE_COOLDOWN * 1000)
 			{
-				_isSprintToggled = !_isSprintToggled;
+				_isSprintToggled = true;
 				_lastSprintToggleTime = Time.GetTicksMsec();
 			}
 
