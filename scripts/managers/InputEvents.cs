@@ -18,6 +18,10 @@ public class InputEvents
     public event Action OnSwitchWeaponUpTriggered;
     public event Action OnSwitchWeaponDownTriggered;
     public event Action<bool> OnInGameMenuToggle;
+    public event Action<bool> OnAimStateChanged;
+    public event Action<bool> OnReloadStateChanged;
+    public event Action OnAimTriggered;
+    public event Action OnAimReleased;
 
     // Événements de souris
     public event Action<Vector2> OnMouseMotionChanged;
@@ -30,6 +34,7 @@ public class InputEvents
     private bool _isJumping = false;
     private bool _isSliding = false;
     private bool _isShooting = false;
+    private bool _isAiming = false;
     private Vector2 _mouseMotion = Vector2.Zero;
     private bool[] _mouseButtonStates = new bool[3]; // Pour les 3 boutons de souris
 
@@ -70,27 +75,48 @@ public class InputEvents
         OnShootStateChanged?.Invoke(isShooting);
     }
 
+    public void UpdateAimState(bool isAiming)
+    {
+        _isAiming = isAiming;
+        OnAimStateChanged?.Invoke(isAiming);
+    }
+
+    public void UpdateReloadState(bool isReloading)
+    {
+        // OnReloadStateChanged?.Invoke(isReloading);
+    }
+
     public void TriggerReload()
     {
         OnReloadTriggered?.Invoke();
     }
 
+    public void TriggerAim()
+    {
+        OnAimTriggered?.Invoke();
+    }
+
+    public void ReleaseAim()
+    {
+        OnAimReleased?.Invoke();
+    }
+
     public void TriggerSwitchWeapon()
     {
         OnSwitchWeaponTriggered?.Invoke();
-        GD.Print("[InputEvents] TriggerSwitchWeapon appelé");
+        //GD.Print("[InputEvents] TriggerSwitchWeapon appelé");
     }
 
     public void TriggerSwitchWeaponUp()
     {
         OnSwitchWeaponUpTriggered?.Invoke();
-        GD.Print("[InputEvents] TriggerSwitchWeaponUp appelé");
+        //GD.Print("[InputEvents] TriggerSwitchWeaponUp appelé");
     }
 
     public void TriggerSwitchWeaponDown()
     {
         OnSwitchWeaponDownTriggered?.Invoke();
-        GD.Print("[InputEvents] TriggerSwitchWeaponDown appelé");
+        //GD.Print("[InputEvents] TriggerSwitchWeaponDown appelé");
     }
 
     public void TriggerInGameMenuToggle(bool isEnabled)
@@ -121,6 +147,7 @@ public class InputEvents
     public bool IsJumping() => _isJumping;
     public bool IsSliding() => _isSliding;
     public bool IsShooting() => _isShooting;
+    public bool IsAiming() => _isAiming;
     public Vector2 GetMouseMotion() => _mouseMotion;
     public bool IsMouseButtonPressed(int buttonIndex) => buttonIndex >= 0 && buttonIndex < _mouseButtonStates.Length && _mouseButtonStates[buttonIndex];
 } 

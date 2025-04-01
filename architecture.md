@@ -1,132 +1,107 @@
 # Architecture du Projet Open Esport 2025
 
-## Structure Générale
+## Structure des Dossiers
 
-```
-open-esport-2025/
-├── scripts/
-│   ├── managers/     # Gestionnaires globaux
-│   ├── modules/      # Modules fonctionnels
-│   ├── structures/   # Structures de données
-│   ├── ui/          # Composants d'interface
-│   └── utils/       # Utilitaires
-├── scenes/          # Scènes Godot
-├── assets/          # Ressources (images, sons, etc.)
-├── configuration/   # Fichiers de configuration
-└── addons/         # Plugins Godot
-```
+### 1. Dossiers Principaux
 
-## Structures de Données
+#### `/addons`
+- Contient les extensions et plugins Godot
+- Géré par le système de gestion des dépendances de Godot
 
-### MenuEntry
-```csharp
-public struct MenuEntry
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public string IconPath { get; set; }
-    public string Action { get; set; }
-    public int ParentId { get; set; }
-    public string UiPath { get; set; }
-    public int Poids { get; set; }
-}
-```
+#### `/assets`
+- Ressources graphiques, sonores et autres médias
+- Organisé par type de ressource
 
-## Gestionnaires (Managers)
+#### `/configuration`
+- Fichiers de configuration du projet
+- Paramètres spécifiques à l'environnement
 
-### GameManager
-- Chemin Global : `GlobalPaths.Managers.GAME_MANAGER`
-- Responsabilité : Gestion de l'état global du jeu
-- États : MainMenu, Gameplay, Pause
-- Communication : Émet des signaux pour les changements d'état
-- Dépendances : Aucune (point central)
-- Fonctions principales :
-  - `ChangeState(GameState newState)`
-  - `GetCurrentState() : GameState`
+#### `/demo`
+- Contient les scènes et scripts de démonstration
+- Utilisé pour les tests et la présentation
 
-### MenuManager
-- Chemin Global : `GlobalPaths.Managers.MENU_MANAGER`
-- Responsabilité : Gestion de l'interface des menus
-- Communication : 
-  - S'abonne aux signaux du GameManager
-  - Réagit aux changements d'état
-- Dépendances : Aucune (communication par événements)
-- Fonctions principales :
-  - `AddMenuEntry(MenuEntry entry)`
-  - `RemoveMenuEntry(int id)`
-  - `UpdateMenuEntry(MenuEntry entry)`
-  - `GetMenuEntry(int id) : MenuEntry?`
-  - `ExecuteAction(string action)`
-  - `DisplaySubMenu(int parentId)`
+#### `/localization`
+- Fichiers de traduction (.lang)
+- Support multilingue complet
+- Format standardisé pour toutes les langues
 
-### InputManager
-- Chemin Global : `GlobalPaths.Managers.INPUT_MANAGER`
-- Responsabilité : Gestion des entrées utilisateur
-- Communication :
-  - Émet des signaux pour les événements d'entrée
-  - Gère la capture/liberté de la souris
-- Dépendances : Aucune (communication par événements)
-- Fonctions principales :
-  - `CaptureMouse()`
-  - `ReleaseMouse()`
-  - `HandleKeyPress(InputEventKey keyEvent)`
+#### `/scenes`
+- Scènes Godot (.tscn)
+- Organisé en sous-dossiers par fonctionnalité
+  - `/menus` : Scènes des menus
+  - `/modules` : Scènes des modules fonctionnels
+  - `/ui` : Composants d'interface utilisateur
 
-### SceneManager
-- Chemin Global : `GlobalPaths.Managers.SCENE_MANAGER`
-- Responsabilité : Gestion du chargement des scènes
-- Communication :
-  - Utilise le LogManager pour les erreurs
-  - Gère les transitions entre scènes
-- Dépendances : Aucune (communication par événements)
-- Fonctions principales :
-  - `LoadScene(string scenePath)`
-  - `ReloadCurrentScene()`
-  - `IsLoading() : bool`
+#### `/scripts`
+- Code source C# et GDScript
+- Organisé en sous-dossiers par fonctionnalité
+  - `/managers` : Gestionnaires de système
+  - `/modules` : Modules fonctionnels
+  - `/structures` : Structures de données
+  - `/menus` : Logique des menus
+  - `/utils` : Utilitaires
+  - `/interfaces` : Interfaces et contrats
 
-### LogManager
-- Chemin Global : `GlobalPaths.Managers.LOG_MANAGER`
-- Responsabilité : Gestion centralisée des logs
-- Communication : Utilisé par tous les managers
-- Dépendances : Aucune
-- Fonctions principales :
-  - `Info(string message)`
-  - `Warning(string message)`
-  - `Error(string message)`
+#### `/TerrainData`
+- Données spécifiques au terrain
+- Fichiers de configuration du terrain
 
-## Modules
+### 2. Fichiers de Configuration
 
-### Structure des Modules
-- Héritent de la classe de base `Module`
-- Gèrent des fonctionnalités spécifiques
-- Communiquent via des événements
+#### Fichiers Godot
+- `project.godot` : Configuration principale du projet Godot
+- `export_presets.cfg` : Paramètres d'exportation
+- `default_bus_layout.tres` : Configuration audio
 
-### Exemples de Modules
-- StandardButtons : Gestion des boutons standards
-- Gamemode : Gestion des modes de jeu
-- Character : Gestion des personnages
+#### Fichiers de Projet
+- `open-esport-2025.sln` : Solution Visual Studio
+- `open-esport-2025.csproj` : Projet C#
+- `.editorconfig` : Configuration de l'éditeur
+- `.gitattributes` : Attributs Git
+- `.gitignore` : Fichiers ignorés par Git
 
-## Communication entre Composants
+#### Documentation
+- `README.md` : Documentation principale en anglais
+- `README_fr.md` : Documentation en français
+- `architecture.md` : Ce fichier d'architecture
+- `LICENSE` : Licence du projet
 
-### Principes
-1. Communication par événements (signals) plutôt que par appels directs
-2. Découplage des composants
-3. Le GameManager comme point central de l'état du jeu
+### 3. Fichiers d'Assets
+- `icon.png` et `icon.svg` : Icônes du projet (doublon à résoudre)
+- Fichiers d'import associés
 
-### Exemple de Flux 
-1. L'InputManager détecte une touche
-2. Il émet un signal
-3. Le GameManager reçoit le signal et change l'état
-4. Le MenuManager reçoit le signal de changement d'état et met à jour l'interface
+## Architecture Logicielle
 
-## Chemins Globaux
-- Centralisés dans `GlobalPaths`
-- Évitent les chemins en dur dans le code
-- Facilitent la maintenance
+### 1. Système de Gestionnaires
+- Gestionnaires centralisés pour différentes fonctionnalités
+- Pattern Singleton pour les gestionnaires globaux
 
-## Bonnes Pratiques
-1. Utilisation de signaux pour la communication
-2. Séparation claire des responsabilités
-3. Gestion centralisée des logs
-4. Chemins globaux pour les références
-5. Documentation des composants 
+### 2. Système Modulaire
+- Modules indépendants et réutilisables
+- Communication inter-modules via des interfaces définies
+
+### 3. Système de Localisation
+- Support multilingue complet
+- Système de chargement dynamique des traductions
+- Format de fichier .lang standardisé
+
+### 4. Interface Utilisateur
+- Séparation claire entre scènes et logique
+- Composants UI réutilisables
+- Système de menus hiérarchique
+
+## Conventions de Nommage
+- PascalCase pour les classes et interfaces
+- camelCase pour les méthodes et variables
+- snake_case pour les fichiers GDScript
+- Préfixes descriptifs pour les scènes et scripts
+
+## Gestion des Dépendances
+- Godot : Gestion native des dépendances
+- C# : Gestion via NuGet
+- Plugins : Gestion via le système d'addons Godot
+
+## Workflow de Développement
+- Utilisation de Git pour le contrôle de version
+- Branches feature pour le développement
+- Tests automatisés pour les modules critiques 

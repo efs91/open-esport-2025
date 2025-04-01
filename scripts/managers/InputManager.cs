@@ -35,6 +35,7 @@ public partial class InputManager : Node
 		public const string INGAME_MENU_F2 = "ingame_menu_f2";
 		public const string MOVE_FLY_MODE = "move_fly_mode";
 		public const string FLY = "fly";
+		public const string AIM = "aim";
 	}
 
 	// Configuration par défaut des touches
@@ -107,7 +108,7 @@ public partial class InputManager : Node
 				}
 				else if (mouseButton.ButtonIndex == MouseButton.WheelDown)
 				{
-					_logManager.Info("[InputManager] Molette vers le bas");
+					//_logManager.Info("[InputManager] Molette vers le bas");
 					_inputEvents.TriggerSwitchWeaponDown();
 				}
 			}
@@ -243,6 +244,12 @@ public partial class InputManager : Node
 		bool isShooting = Input.IsActionPressed(Actions.SHOOT);
 		_inputEvents.UpdateShootState(isShooting);
 
+		bool isAiming = Input.IsActionPressed(Actions.AIM);
+		_inputEvents.UpdateAimState(isAiming);
+
+		bool isReloading = Input.IsActionPressed(Actions.RELOAD);
+		_inputEvents.UpdateReloadState(isReloading);
+
 		if (Input.IsActionJustPressed(Actions.RELOAD))
 		{
 			_inputEvents.TriggerReload();
@@ -251,6 +258,16 @@ public partial class InputManager : Node
 		if (Input.IsActionJustPressed(Actions.SWITCH_WEAPON))
 		{
 			_inputEvents.TriggerSwitchWeapon();
+		}
+
+		if (Input.IsActionJustPressed("aim"))
+		{
+			_inputEvents.TriggerAim();
+		}
+
+		if (Input.IsActionJustReleased("aim"))
+		{
+			_inputEvents.ReleaseAim();
 		}
 	}
 
@@ -288,17 +305,18 @@ public partial class InputManager : Node
 		// Créer le dictionnaire des touches par défaut
 		_defaultBindings = new Dictionary<string, InputEvent>
 		{
-			{ Actions.MOVE_FORWARD, new InputEventKey { Keycode = _gameManager.MoveForwardKey } },
-			{ Actions.MOVE_BACK, new InputEventKey { Keycode = _gameManager.MoveBackwardKey } },
-			{ Actions.MOVE_LEFT, new InputEventKey { Keycode = _gameManager.MoveLeftKey } },
-			{ Actions.MOVE_RIGHT, new InputEventKey { Keycode = _gameManager.MoveRightKey } },
-			{ Actions.JUMP, new InputEventKey { Keycode = _gameManager.JumpKey } },
-			{ Actions.SPRINT, new InputEventKey { Keycode = _gameManager.SprintKey } },
-			{ Actions.CROUCH, new InputEventKey { Keycode = _gameManager.CrouchKey } },
-			{ Actions.SLIDE, new InputEventKey { Keycode = _gameManager.SlideKey } },
-			{ Actions.SHOOT, new InputEventMouseButton { ButtonIndex = _gameManager.ShootKey } },
+			{ Actions.MOVE_FORWARD, new InputEventKey { Keycode = Key.Z } },
+			{ Actions.MOVE_BACK, new InputEventKey { Keycode = Key.S } },
+			{ Actions.MOVE_LEFT, new InputEventKey { Keycode = Key.Q } },
+			{ Actions.MOVE_RIGHT, new InputEventKey { Keycode = Key.D } },
+			{ Actions.JUMP, new InputEventKey { Keycode = Key.Space } },
+			{ Actions.SPRINT, new InputEventKey { Keycode = Key.Shift } },
+			{ Actions.CROUCH, new InputEventKey { Keycode = Key.Ctrl } },
+			{ Actions.SLIDE, new InputEventKey { Keycode = Key.C } },
+			{ Actions.SHOOT, new InputEventMouseButton { ButtonIndex = MouseButton.Left } },
+			{ Actions.AIM, new InputEventMouseButton { ButtonIndex = MouseButton.Right } },
 			{ Actions.RELOAD, new InputEventKey { Keycode = Key.R } },
-			{ Actions.SWITCH_WEAPON, new InputEventKey { Keycode = Key.V } },
+			{ Actions.SWITCH_WEAPON, new InputEventKey { Keycode = Key.A } },
 			{ Actions.UI_CANCEL, new InputEventKey { Keycode = Key.Escape } },
 			{ Actions.DEBUG_F1, new InputEventKey { Keycode = Key.F1 } },
 			{ Actions.INGAME_MENU_F2, new InputEventKey { Keycode = Key.F2 } }

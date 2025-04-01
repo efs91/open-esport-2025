@@ -48,15 +48,8 @@ WaterAudioInteract = ExtResource("13_nc4i7")
 
 [node name="HUD" parent="." index="11" instance=ExtResource("14_w6hxa")]
 
-[node name="Head" parent="." index="12"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="fps-hands" type="Node3D" parent="Head/Camera" index="0" node_paths=PackedStringArray("camera", "node_recoil_x", "node_recoil_y")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+[node name="fps-hands" type="Node3D" parent="Head/Camera" index="0"]
 script = ExtResource("18_fps-hands")
-camera = NodePath("..")
-node_recoil_x = NodePath("..")
-node_recoil_y = NodePath("../..")
 
 [node name="Head Bob" parent="Head" index="1"]
 BobCurve = ExtResource("16_j0nls")
