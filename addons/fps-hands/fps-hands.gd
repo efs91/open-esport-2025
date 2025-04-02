@@ -1,6 +1,7 @@
 @icon("icon.svg")
 extends Node3D
 
+
 signal give_damage(obj:Node3D, damage:float, point:Vector3)
 signal update_ammo(magazine:int, inventory_ammo:int, ammo_type:String)
 
@@ -27,7 +28,7 @@ signal update_ammo(magazine:int, inventory_ammo:int, ammo_type:String)
 @export var recoil_x_clamp_max : float = 1.4
 @export var recoil_x_clamp_min : float = -1.4
 @export_subgroup("")
-@export var sway : bool = true
+@export var sway : bool = false
 @export_subgroup("Sway configs")
 @export var sway_look_sens : float = 50.0
 @export var sway_move_sens : float = 80.0
@@ -58,6 +59,7 @@ var bulletholeScene : PackedScene = preload("decals/bullethole/bullethole.tscn")
 var scratchScene : PackedScene = preload("decals/scratch/scratch.tscn")
 var muzzleFlashScene : PackedScene = preload("muzzleflash/MuzzleFlash.tscn")
 var muzzleSmokeScene : PackedScene = preload("muzzlesmoke/MuzzleSmoke.tscn")
+var bulletScene : PackedScene = preload("res://scenes/modules/weapons/bullet.tscn")
 
 var weapons : Array[PackedScene] = [
 	preload("fps-knife/fps-knife.tscn"),
@@ -130,20 +132,13 @@ func add_decal(pos:Vector3, normal:Vector3, decal:PackedScene, father:Node3D) ->
 	bullethole.rotate(normal, randf_range(0, 2*PI))
 
 func check_damage(raycast:RayCast3D, damage:float, melee:bool=true) -> void:
-	var collider = raycast.get_collider()
-	var decal : PackedScene = bulletholeScene
-	
-	if collider is RigidBody3D or collider is CharacterBody3D:
-		if !melee:
-			# The greater the distance, the lesser the damage
-			damage -= weapon.get_meta("damage")/weapon.get_meta("range")*raycast.global_position.distance_to(raycast.get_collision_point())
-		damage *= damage_multiplier
-		give_damage.emit(collider, damage, raycast.get_collision_point())
-	
-	if collider is RigidBody3D or collider is StaticBody3D:
-		if melee:
-			decal = scratchScene
-		add_decal(raycast.get_collision_point(), raycast.get_collision_normal(), decal, collider)
+	if muzzlePoint:
+		var bullet = bulletScene.instantiate()
+		get_tree().root.add_child(bullet)
+		bullet.global_transform = muzzlePoint.global_transform
+		var direction = muzzlePoint.global_transform.basis.z
+		print("Direction du MuzzlePoint : ", direction)
+		bullet.set_initial_direction(direction)
 
 func muzzle_flash():
 	if muzzlePoint:

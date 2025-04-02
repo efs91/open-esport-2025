@@ -58,6 +58,8 @@ camera = NodePath("..")
 node_recoil_x = NodePath("..")
 node_recoil_y = NodePath("../..")
 
+[node name="Marker3D" type="Marker3D" parent="Head/Camera/fps-hands" index="0"]
+
 [node name="Head Bob" parent="Head" index="1"]
 BobCurve = ExtResource("16_j0nls")
 

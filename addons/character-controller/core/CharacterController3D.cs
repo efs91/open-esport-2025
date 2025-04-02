@@ -163,7 +163,7 @@ public partial class CharacterController3D : CharacterBody3D
 	// Minimum time between sprint toggles (in seconds)
 	private const float SPRINT_TOGGLE_COOLDOWN = 0.2f;
 	// Time before sprint is disabled when not moving (in seconds)
-	private const float SPRINT_DISABLE_DELAY = 0.0f;
+	private const float SPRINT_DISABLE_DELAY = 0.01f;
 	// Time since last movement
 	private float _lastMovementTime = 0f;
 	// Last position of the character

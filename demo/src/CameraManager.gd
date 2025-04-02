@@ -1,6 +1,6 @@
 extends Node3D
 
-const CAMERA_MAX_PITCH: float = deg_to_rad(70)
+const CAMERA_MAX_PITCH: float = deg_to_rad(89.9)
 const CAMERA_MIN_PITCH: float = deg_to_rad(-89.9)
 const CAMERA_RATIO: float = .625
 
