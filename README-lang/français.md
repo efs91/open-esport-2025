@@ -7,7 +7,7 @@
 **Open Esport 2025** est un projet FPS compétitif open source développé avec le moteur **Godot 4**. Il vise à fournir une base modulaire, extensible et facilement déployable pour créer des expériences esport modernes.
 
 L'objectif principal est d'offrir une infrastructure **auto-hébergée** et **autonome**, indépendante des éditeurs traditionnels, afin de contourner les limitations ou les changements de politique imposés à des fins commerciales.  
-Le projet est conçu pour être **compatible avec les environnements de déploiement modernes** (Docker, Kubernetes, PaaS comme Fly.io, Railway, ou IaaS comme AWS, GCP, Azure), tout en restant léger et facile à héberger localement.
+Le projet est conçu pour être **compatible avec les environnements de déploiement modernes** (Docker, Kubernetes, Azure, AWS, ...), tout en restant léger et facile à héberger localement.
 
 Cette solution est destinée aux développeurs, aux organisateurs de tournois, aux communautés open source et à tous ceux qui souhaitent créer, gérer et faire évoluer une plateforme esport gratuite, transparente et souveraine.
 
