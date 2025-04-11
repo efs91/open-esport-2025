@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8dobwn763ype"]
+
+[ext_resource type="Script" uid="uid://hufqdyyp2mia" path="res://scripts/modules/AI/AiPlayer.cs" id="1_cnnei"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i6elo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ctktg"]
+
+[node name="AI_player" type="CharacterBody3D"]
+script = ExtResource("1_cnnei")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.99, 0, 0, 0, 0.99, 0, 0, 0, 0.99, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_i6elo")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_i6elo")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.99, 0, 0, 0, 0.99, 0, 0, 0, 0.99, 0, 0, 0)
+use_collision = true
+mesh = SubResource("CapsuleMesh_ctktg")

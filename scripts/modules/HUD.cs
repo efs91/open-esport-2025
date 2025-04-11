@@ -16,14 +16,27 @@ namespace Openesport
 		private Label _crouchLabel;
 		private Label _jumpLabel;
 		private Label _slideLabel;
+		private Label _ammoLabel;
+		private Label _healthLabel;
 		private float _lastYVelocity = 0f;
 		private float _currentGravity = 0f;
 		private FPSController3D _player;
+		private Node _fpsHands;
+		private HealthAbility3D _healthAbility;
 
 		public override void _Ready()
 		{
 			SetupHUD();
 			_player = GetParent<FPSController3D>();
+			_fpsHands = _player.GetNode("Head/Camera/WeaponManager");
+			_fpsHands.Connect("update_ammo", Callable.From((int magazine, int inventoryAmmo, string ammoType) => UpdateAmmo(magazine, inventoryAmmo)));
+			
+			_healthAbility = _player.GetNode<HealthAbility3D>("Health Ability 3D");
+			if (_healthAbility != null)
+			{
+				_healthAbility.OnHealthChanged += UpdateHealth;
+				UpdateHealth(_healthAbility.GetCurrentHealth());
+			}
 		}
 
 		private void SetupHUD()
@@ -43,8 +56,6 @@ namespace Openesport
 			_walkLabel = CreateStateLabel("Deplacements", xOffset, yOffset);
 			xOffset += spacing;
 
-			
-
 			_sprintLabel = CreateStateLabel("Sprint", xOffset, yOffset);
 			xOffset += spacing;
 
@@ -55,7 +66,12 @@ namespace Openesport
 			xOffset += spacing;
 
 			_slideLabel = CreateStateLabel("Slide", xOffset, yOffset);
-			GD.Print("HUD: State labels created");
+
+			// Label pour les munitions en bas à gauche
+			_ammoLabel = CreateInfoLabel("Munitions: 0/0", new Vector2(20, GetViewportRect().Size.Y - 40), Colors.White);
+			
+			// Label pour la santé au-dessus des munitions
+			_healthLabel = CreateInfoLabel("Santé: 100/100", new Vector2(20, GetViewportRect().Size.Y - 80), Colors.Green);
 
 			GD.Print("HUD: Setup complete");
 		}
@@ -161,6 +177,31 @@ namespace Openesport
 				var isSliding = slideAbility != null && slideAbility.IsActived();
 				_slideLabel.Text = $"Slide: {(isSliding ? "OUI" : "NON")}";
 				_slideLabel.AddThemeColorOverride("font_color", isSliding ? Colors.Green : Colors.Red);
+			}
+		}
+
+		public void UpdateAmmo(int magazine, int inventoryAmmo)
+		{
+			if (_ammoLabel != null)
+			{
+				_ammoLabel.Text = $"Munitions: {magazine}/{inventoryAmmo}";
+			}
+		}
+
+		private void UpdateHealth(float currentHealth)
+		{
+			if (_healthLabel != null && _healthAbility != null)
+			{
+				float maxHealth = _healthAbility.MaxHealth;
+				_healthLabel.Text = $"Santé: {currentHealth}/{maxHealth}";
+				
+				// Changer la couleur en fonction de la santé
+				if (currentHealth > maxHealth * 0.5f)
+					_healthLabel.AddThemeColorOverride("font_color", Colors.Green);
+				else if (currentHealth > maxHealth * 0.25f)
+					_healthLabel.AddThemeColorOverride("font_color", Colors.Yellow);
+				else
+					_healthLabel.AddThemeColorOverride("font_color", Colors.Red);
 			}
 		}
 	}

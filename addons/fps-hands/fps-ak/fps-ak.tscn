@@ -178,7 +178,7 @@ transform = Transform3D(0.999996, 0, 0, 0, 0.999995, 0, 0, 0, 1, 0, 4.98066, 0.1
 cast_shadow = 0
 
 [node name="MuzzlePoint" type="Node3D" parent="Sketchfab_model/a5167d948e6a4ec8bd09a04312151f71_fbx/Object_2/RootNode/Object_4/ak/base" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.513291, 8.64982, 72.6111)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -3.55271e-15, 1, 0.513291, 8.64982, 79.0928)
 
 [node name="bolt_ak74_0" parent="Sketchfab_model/a5167d948e6a4ec8bd09a04312151f71_fbx/Object_2/RootNode/Object_4/ak/bolt" index="0"]
 cast_shadow = 0
@@ -206,6 +206,9 @@ transform = Transform3D(-0.213663, -0.937537, 0.274539, -0.970267, 0.236366, 0.0
 
 [node name="R_arm_Pole" parent="Sketchfab_model/a5167d948e6a4ec8bd09a04312151f71_fbx/Object_2/RootNode/Object_4" index="4"]
 transform = Transform3D(-0.31116, 0.929846, -0.196384, 0.944911, 0.32479, 0.0406678, 0.101598, -0.172911, -0.979683, -48.269, -15.2028, -22.3671)
+
+[node name="Marker3D" type="Marker3D" parent="Sketchfab_model" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, -81.0749, 13.7482)
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeStateMachine_d6lpy")

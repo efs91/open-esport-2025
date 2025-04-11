@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dtxyoypudtllo"]
+[gd_scene load_steps=23 format=3 uid="uid://dtxyoypudtllo"]
 
 [ext_resource type="PackedScene" uid="uid://1m63rxyd6siv" path="res://addons/fps-hands/fps-smg45/resources/fps_animated_smg.glb" id="1_yl4uh"]
 
@@ -89,6 +89,8 @@ states/take/position = Vector2(305.731, 100)
 transitions = ["Start", "take", SubResource("AnimationNodeStateMachineTransition_4twgp"), "idle", "fire", SubResource("AnimationNodeStateMachineTransition_0nkse"), "idle", "melee", SubResource("AnimationNodeStateMachineTransition_r2p1r"), "idle", "reload", SubResource("AnimationNodeStateMachineTransition_rerum"), "idle", "reload_full", SubResource("AnimationNodeStateMachineTransition_gfn05"), "idle", "hide", SubResource("AnimationNodeStateMachineTransition_af7us"), "take", "idle", SubResource("AnimationNodeStateMachineTransition_ap2eu"), "hide", "End", SubResource("AnimationNodeStateMachineTransition_7u442"), "melee", "idle", SubResource("AnimationNodeStateMachineTransition_7uiia"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_n858q"), "reload", "idle", SubResource("AnimationNodeStateMachineTransition_0l5qe"), "reload_full", "idle", SubResource("AnimationNodeStateMachineTransition_5iptf")]
 graph_offset = Vector2(-191.269, -23.436)
 
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_g0b5m"]
+
 [node name="fps-smg45" instance=ExtResource("1_yl4uh")]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, -0.1, -0.4, 0.2)
 metadata/ads_pos = Vector3(0, -0.31, 0.1)
@@ -171,7 +173,7 @@ transform = Transform3D(1, -2.09871e-06, -2.68479e-06, 2.0987e-06, 1, -1.46564e-
 cast_shadow = 0
 
 [node name="MuzzlePoint" type="Node3D" parent="Sketchfab_model/243f038534954d4d8381423b602d69f0_fbx/Object_2/RootNode/Object_4/smg45/base" index="1"]
-transform = Transform3D(1, 7.32413e-10, -7.27596e-12, -2.99293e-09, 1, 4.65661e-10, -1.27329e-11, -4.65661e-10, 1, -0.000754356, 7.95266, 40.9332)
+transform = Transform3D(1, 7.31984e-10, -9.09495e-12, -2.9924e-09, 1, 4.6532e-10, -1.3415e-11, -4.6532e-10, 1, -0.000734806, 7.95267, 48.3003)
 
 [node name="carrier" parent="Sketchfab_model/243f038534954d4d8381423b602d69f0_fbx/Object_2/RootNode/Object_4/smg45" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11022e-15, 8.3071, 13.7566)
@@ -203,11 +205,15 @@ transform = Transform3D(-0.31116, -0.929846, 0.196383, -0.944911, 0.32479, 0.040
 [node name="R_arm_Pole" parent="Sketchfab_model/243f038534954d4d8381423b602d69f0_fbx/Object_2/RootNode/Object_4" index="4"]
 transform = Transform3D(-0.31116, 0.929846, -0.196384, 0.944911, 0.32479, 0.0406678, 0.101598, -0.172911, -0.979683, -48.269, -15.2028, -22.3671)
 
+[node name="Marker3D" type="Marker3D" parent="Sketchfab_model" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, -53.3719, 13.7482)
+
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeStateMachine_yvxt5")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = SubResource("AudioStreamPolyphonic_g0b5m")
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="animation_started" from="AnimationTree" to="." method="_on_animation_tree_animation_started"]

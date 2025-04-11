@@ -149,7 +149,6 @@ public partial class CharacterController3D : CharacterBody3D
 	// Slide ability.
 	public SlideAbility3D SlideAbility;
 	// Capacité de tir
-	public ShootAbility3D ShootAbility;
 	// Stores normal speed
 	private int _normalSpeed;
 	// True if in the last frame it was on the ground
@@ -208,7 +207,7 @@ public partial class CharacterController3D : CharacterBody3D
 		FlyAbility = GetNode<FlyAbility3D>("Fly Ability 3D");
 		SwimAbility = GetNode<SwimAbility3D>("Swim Ability 3D");
 		SlideAbility = GetNode<SlideAbility3D>("Slide Ability 3D");
-		ShootAbility = GetNode<ShootAbility3D>("Shoot Ability 3D");
+		
 		_defaultHeight = (float)Collision.Shape.Get("height");
 		_normalSpeed = Speed;
 		_currentMaxSpeed = Speed * SprintSpeedMultiplier;

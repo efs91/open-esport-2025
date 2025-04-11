@@ -91,8 +91,7 @@ var shake_current : float = 0.0
 
 # Add nodes and settings to plugin scene
 func _enter_tree() -> void:
-	print("[fps-hands] _enter_tree appelé")
-	print("[fps-hands] weapon_index initial = ", weapon_index)
+
 	MeleeRayCast = RayCast3D.new()
 	MeleeRayCast.target_position = Vector3(0,0,1)
 	add_child(MeleeRayCast)
@@ -103,12 +102,12 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
-	print("[fps-hands] _ready appelé")
-	print("[fps-hands] weapon_index avant take_weapon = ", weapon_index)
+
 	if sway and camera:
 		top_level = true
-	take_weapon(2)
-	print("[fps-hands] weapon_index après take_weapon = ", weapon_index)
+	take_weapon(0)
+
+	
 
 
 func update_inventory():
@@ -131,14 +130,22 @@ func add_decal(pos:Vector3, normal:Vector3, decal:PackedScene, father:Node3D) ->
 		bullethole.look_at(pos + Vector3.UP, normal)
 	bullethole.rotate(normal, randf_range(0, 2*PI))
 
-func check_damage(raycast:RayCast3D, damage:float, melee:bool=true) -> void:
+func shoot_bullet() -> void:
 	if muzzlePoint:
 		var bullet = bulletScene.instantiate()
 		get_tree().root.add_child(bullet)
 		bullet.global_transform = muzzlePoint.global_transform
 		var direction = muzzlePoint.global_transform.basis.z
-		print("Direction du MuzzlePoint : ", direction)
 		bullet.set_initial_direction(direction)
+
+func check_damage(raycast:RayCast3D, damage:float, melee:bool=true) -> void:
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		if collider.has_method("take_damage"):
+			collider.take_damage(damage)
+			var collision_point = raycast.get_collision_point()
+			var collision_normal = raycast.get_collision_normal()
+			add_decal(collision_point, collision_normal, bulletholeScene, collider)
 
 func muzzle_flash():
 	if muzzlePoint:
@@ -153,27 +160,19 @@ func muzzle_smoke():
 		muzzlePoint.add_child(muzzleSmoke)
 
 func add_recoil():
-	print("[fps-hands] add_recoil appelé")
-	print("[fps-hands] weapon = ", weapon)
+
 	if recoil and weapon.get_meta("recoil_x",0)+weapon.get_meta("recoil_y",0)>0:
-		print("[fps-hands] recul activé")
+		
 		recoiling = true
 		
 		var recoil_x:float = randf_range(weapon.get_meta("recoil_x",0)*.2, weapon.get_meta("recoil_x",0))
 		var recoil_y:float = randf_range(-weapon.get_meta("recoil_y",0), weapon.get_meta("recoil_y",0))
-		
-		print("[fps-hands] recoil_x = ", recoil_x)
-		print("[fps-hands] recoil_y = ", recoil_y)
-		print("[fps-hands] node_recoil_x = ", node_recoil_x)
-		print("[fps-hands] node_recoil_y = ", node_recoil_y)
+	
 		
 		recoil_target.x = clampf(node_recoil_x.rotation.x + recoil_x, recoil_x_clamp_min, recoil_x_clamp_max)
 		recoil_target.y = node_recoil_y.rotation.y + recoil_y
-	else:
-		print("[fps-hands] recul désactivé")
-		print("[fps-hands] recoil = ", recoil)
-		print("[fps-hands] recoil_x = ", weapon.get_meta("recoil_x",0))
-		print("[fps-hands] recoil_y = ", weapon.get_meta("recoil_y",0))
+	
+
 
 func add_camera_shake(amount:float):
 	if shake and camera and weapon.get_meta("recoil_x",0)+weapon.get_meta("recoil_y",0)>0:
@@ -187,14 +186,14 @@ func camera_shake():
 		camera.v_offset = shake_max_offset.y * amount * randf_range(-1, 1)
 
 func take_weapon(inventory_index:int) -> void:
-	print("[fps-hands] take_weapon appelé avec inventory_index = ", inventory_index)
-	print("[fps-hands] weapon_index avant = ", weapon_index)
+
 	inventory_index = wrapi(inventory_index, 0, inventory["weapons"].size())
 	var inventory_weapon = inventory["weapons"][inventory_index]
 	var index = inventory_weapon[0] # Weapon index of weapons array
 	index = clampi(index, 0, weapons.size()-1)
+
 	
-	print("[fps-hands] index calculé = ", index)
+
 	
 	# Add weapon to scene in there is none
 	if !weapon or !weapon.is_inside_tree():
@@ -203,7 +202,7 @@ func take_weapon(inventory_index:int) -> void:
 		add_child(weapon)
 	# If it's the same as the current weapon, do nothing
 	elif weapon_index == inventory_index:
-		print("[fps-hands] Même arme, on ne fait rien")
+		
 		return
 	# If there is already a weapon, hide it then change it
 	else:
@@ -213,7 +212,7 @@ func take_weapon(inventory_index:int) -> void:
 	
 	weapon_index = inventory_index
 	weapon_change = inventory_index
-	print("[fps-hands] weapon_index après = ", weapon_index)
+	
 	animation = weapon.get_node("AnimationTree")
 	state_machine = animation["parameters/playback"]
 	muzzlePoint = weapon.find_child("MuzzlePoint")
@@ -231,6 +230,7 @@ func take_weapon(inventory_index:int) -> void:
 	
 	animation.connect("animation_finished", _on_animation_tree_animation_finished)
 	animation.connect("animation_started", _on_animation_tree_animation_started)
+	
 
 func hide_weapon() -> void:
 	animation.disconnect("animation_finished", _on_animation_tree_animation_finished)
@@ -249,16 +249,15 @@ func checkstate(is_shooting: bool, is_reloading: bool, is_aiming: bool) -> void:
 		
 		# Actions
 		if is_reloading :
-			print("[fps-hands] tentative de rechargement")
-			print("[fps-hands] magazine=", magazine, " max_magazine=", max_magazine)
+			
 			state_machine.travel("reload")
 			if inventory["ammo"][weapon.get_meta("ammo_type", "none")] > 0:
 				self.is_reloading = true
 				if magazine > 0 and "reload_full" in animation.get_animation_list():
-					print("[fps-hands] lancement animation reload_full")
+					
 					state_machine.travel("reload_full")
 				else:
-					print("[fps-hands] lancement animation reload")
+					
 					state_machine.travel("reload")
 		if is_aiming:
 			aim()
@@ -320,9 +319,14 @@ func _on_animation_tree_animation_started(anim_name: StringName) -> void:
 	if anim_name != "idle" and anim_name != "fire":
 		aim(false)
 	if anim_name == "fire":
+		# Récupérer le WeaponManager depuis la scène player
+		
+		var weapon_manager = $"../WeaponManager"
+		# Vérifier que l'option "Use New Weapon System" n'est pas activée
 		if max_magazine != 0:
 			magazine -= 1
 			update_inventory()
+		shoot_bullet()
 		check_damage(FireRayCast, weapon.get_meta("damage"), weapon.get_meta("melee", false))
 		muzzle_flash()
 		muzzle_smoke()

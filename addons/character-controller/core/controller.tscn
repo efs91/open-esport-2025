@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ciu2qgckgu5sr"]
+[gd_scene load_steps=10 format=3 uid="uid://ciu2qgckgu5sr"]
 
 [ext_resource type="Script" uid="uid://c1d74opc7qqob" path="res://addons/character-controller/core/CharacterController3D.cs" id="1_snllq"]
 [ext_resource type="Script" uid="uid://dau7xpxhcvyqb" path="res://addons/character-controller/abilities/CrouchAbility3D.cs" id="7_kh76d"]
+[ext_resource type="Script" uid="uid://ckf7jqndqyhb7" path="res://addons/character-controller/abilities/HealthAbility3D.cs" id="8_4ia3x"]
 [ext_resource type="Script" uid="uid://1ohm0o6l6bxp" path="res://addons/character-controller/abilities/SprintAbility3D.cs" id="8_8b02o"]
 [ext_resource type="Script" uid="uid://b6xhnimbsou5c" path="res://addons/character-controller/abilities/WalkAbility3D.cs" id="9_laych"]
 [ext_resource type="Script" uid="uid://bflifdtic821g" path="res://addons/character-controller/abilities/JumpAbility3D.cs" id="10_abxar"]
@@ -46,3 +47,7 @@ collision_mask = 8
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="Health Ability 3D" type="Node3D" parent="."]
+script = ExtResource("8_4ia3x")
+_active = true

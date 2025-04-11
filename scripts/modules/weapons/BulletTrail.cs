@@ -9,7 +9,7 @@ public partial class BulletTrail : GpuParticles3D
 
 	public override void _Ready()
 	{
-		GD.Print("Initialisation de la traînée de la balle");
+		
 
 		// Créer le matériau simple
 		_material = new StandardMaterial3D();
@@ -41,7 +41,7 @@ public partial class BulletTrail : GpuParticles3D
 			EmissionShape = ParticleProcessMaterial.EmissionShapeEnum.Point
 		};
 
-		GD.Print($"Traînée configurée avec {Amount} particules à {FixedFps} FPS");
+		
 	}
 
 	public override void _Process(double delta)
@@ -49,7 +49,7 @@ public partial class BulletTrail : GpuParticles3D
 		_currentTime += (float)delta;
 		if (_currentTime >= _fadeOutTime)
 		{
-			GD.Print("Suppression de la traînée après " + _currentTime + " secondes");
+			
 			QueueFree();
 		}
 	}

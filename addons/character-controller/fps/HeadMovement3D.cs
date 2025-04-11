@@ -41,7 +41,7 @@ public partial class HeadMovement3D : Marker3D
         _actualRotation.Y -= mouseAxis.X * (MouseSensitivity / 1000);
         // Vertical mouse look.
         _actualRotation.X = Mathf.Clamp(_actualRotation.X - mouseAxis.Y * (MouseSensitivity / 1000), -VerticalAngleLimit, VerticalAngleLimit);
-
+        //GD.Print("YOYOYOYOYOYO", _actualRotation.X, _actualRotation.Y);
         GetOwner<Node3D>().Rotation = new Vector3(GetOwner<Node3D>().Rotation.X, _actualRotation.Y, GetOwner<Node3D>().Rotation.Z);
         Rotation = new Vector3(_actualRotation.X, Rotation.Y, Rotation.Z);
     }

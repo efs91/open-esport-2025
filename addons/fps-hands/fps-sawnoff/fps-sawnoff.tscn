@@ -181,7 +181,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.88178e-16, 3.28027, -3.3011
 cast_shadow = 0
 
 [node name="MuzzlePoint" type="Node3D" parent="Sketchfab_model/bd36959eb9f54254adda1d24204cd512_fbx/Object_2/RootNode/Object_4/sawnoff/front" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.22268, 30.1992)
+transform = Transform3D(1, -6.90123e-15, 1.77636e-15, 7.30962e-15, 1, 1.77636e-15, 0, -8.88178e-16, 1, -4.76837e-07, 4.22268, 39.7053)
 
 [node name="L_arm_Pole" parent="Sketchfab_model/bd36959eb9f54254adda1d24204cd512_fbx/Object_2/RootNode/Object_4" index="3"]
 transform = Transform3D(-0.213663, -0.937537, 0.274539, -0.970268, 0.236366, 0.0520566, -0.113697, -0.255254, -0.960166, 22.3524, -17.7051, 10.1207)
@@ -194,3 +194,6 @@ tree_root = SubResource("AnimationNodeStateMachine_flahj")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+
+[node name="Marker3D" type="Marker3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 5.6105, 52.6777)

@@ -6,11 +6,13 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_xq81x"]
 
 [node name="Bullet" type="RigidBody3D"]
+continuous_cd = true
 script = ExtResource("1_qk30p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_xq81x")
 
-[node name="amo" type="CSGSphere3D" parent="CollisionShape3D"]
+[node name="amo" type="CSGSphere3D" parent="."]
 material_override = ExtResource("1_2cda5")
+use_collision = true
 radius = 0.1

@@ -4,20 +4,20 @@
 [ext_resource type="Script" uid="uid://ck7buaygo06ww" path="res://scripts/modules/character/Player.cs" id="2_40hbx"]
 [ext_resource type="Environment" uid="uid://b3cn01u84faiy" path="res://addons/character-controller/example/main/underwater.tres" id="3_plyax"]
 [ext_resource type="Script" uid="uid://cjsirp4jdfhq5" path="res://addons/character-controller/abilities/SlideAbility3D.cs" id="4_mptvw"]
-[ext_resource type="Script" uid="uid://cjt8nn38jrfh3" path="res://addons/character-controller/abilities/ShootAbility3D.cs" id="5_ou3m2"]
 [ext_resource type="PackedScene" uid="uid://dx3pmb0twepo" path="res://addons/character-controller/example/main/audios/player_audios.tscn" id="6_fdxk7"]
 [ext_resource type="Resource" uid="uid://boafje76qrf27" path="res://addons/character-controller/example/main/audio_interacts/grass_audio_interact.tres" id="7_4y3sr"]
 [ext_resource type="PhysicsMaterial" path="res://addons/character-controller/example/main/physics/grass.tres" id="8_0sfnq"]
 [ext_resource type="PhysicsMaterial" uid="uid://bklf2cx3fydt3" path="res://addons/character-controller/example/main/physics/stone.tres" id="9_x7pku"]
 [ext_resource type="PhysicsMaterial" path="res://addons/character-controller/example/main/physics/wood.tres" id="10_6v0ei"]
 [ext_resource type="Resource" uid="uid://ci8kg40ae4vnl" path="res://addons/character-controller/example/main/audio_interacts/stone_audio_interact.tres" id="11_ace0t"]
-[ext_resource type="Script" uid="uid://dnojluexhkx0t" path="res://addons/character-controller/example/main/audios/AudioInteract.cs" id="11_x32v0"]
+[ext_resource type="Script" uid="uid://dnojluexhkx0t" path="res://addons/character-controller/example/main/audios/AudioInteract.cs" id="11_mptvw"]
 [ext_resource type="Resource" uid="uid://dx5kojv0cn4yl" path="res://addons/character-controller/example/main/audio_interacts/wood_audio_interact.tres" id="12_du4vv"]
 [ext_resource type="Resource" uid="uid://clro80qf2tdqi" path="res://addons/character-controller/example/main/audio_interacts/water_audio_interact.tres" id="13_nc4i7"]
 [ext_resource type="PackedScene" uid="uid://cwl5tpaw5yqn1" path="res://scenes/HUD.tscn" id="14_w6hxa"]
 [ext_resource type="Curve" uid="uid://dhx3p5wsiw0bs" path="res://addons/character-controller/fps/bob/bob_curve.tres" id="16_j0nls"]
+[ext_resource type="Script" uid="uid://dtbchw65wy4cj" path="res://scripts/managers/WeaponManager.cs" id="16_plyax"]
 [ext_resource type="Texture2D" uid="uid://vy8rsbqxbm55" path="res://assets/textures/crosshair.png" id="17_li5qc"]
-[ext_resource type="Script" uid="uid://dqpu1a1oaeusv" path="res://addons/fps-hands/fps-hands.gd" id="18_fps-hands"]
+[ext_resource type="Script" uid="uid://ckf7jqndqyhb7" path="res://addons/character-controller/abilities/HealthAbility3D.cs" id="19_plyax"]
 
 [node name="Player" instance=ExtResource("1_x32v0")]
 script = ExtResource("2_40hbx")
@@ -30,40 +30,36 @@ InputJumpActionName = "jump"
 InputCrouchActionName = "crouch"
 InputFlyModeActionName = "move_fly_mode"
 UnderwaterEnv = ExtResource("3_plyax")
+StepBobEnabled = false
+JumpBobEnabled = false
+RotationToMove = false
 Friction = 0.1
 SprintModeType = 1
-AbilitiesPath = Array[NodePath]([NodePath("Crouch Ability 3D"), NodePath("Sprint Ability 3D"), NodePath("Walk Ability 3D"), NodePath("Jump Ability 3D"), NodePath("Fly Ability 3D"), NodePath("Swim Ability 3D"), NodePath("Slide Ability 3D"), NodePath("Shoot Ability 3D")])
+AbilitiesPath = Array[NodePath]([NodePath("Crouch Ability 3D"), NodePath("Sprint Ability 3D"), NodePath("Walk Ability 3D"), NodePath("Jump Ability 3D"), NodePath("Fly Ability 3D"), NodePath("Swim Ability 3D"), NodePath("Slide Ability 3D"), NodePath("Health Ability 3D")])
 
 [node name="Slide Ability 3D" type="Node3D" parent="." index="7"]
 script = ExtResource("4_mptvw")
 
-[node name="Shoot Ability 3D" type="Node3D" parent="." index="8"]
-script = ExtResource("5_ou3m2")
-
-[node name="Player Audios" parent="." index="10" instance=ExtResource("6_fdxk7")]
+[node name="Player Audios" parent="." index="9" instance=ExtResource("6_fdxk7")]
 AudioInteract = ExtResource("7_4y3sr")
 PhysicMaterials = Array[PhysicsMaterial]([ExtResource("8_0sfnq"), ExtResource("9_x7pku"), ExtResource("10_6v0ei")])
-AudioInteracts = Array[ExtResource("11_x32v0")]([ExtResource("7_4y3sr"), ExtResource("11_ace0t"), ExtResource("12_du4vv")])
+AudioInteracts = Array[ExtResource("11_mptvw")]([ExtResource("7_4y3sr"), ExtResource("11_ace0t"), ExtResource("12_du4vv")])
 WaterAudioInteract = ExtResource("13_nc4i7")
 
-[node name="HUD" parent="." index="11" instance=ExtResource("14_w6hxa")]
+[node name="HUD" parent="." index="10" instance=ExtResource("14_w6hxa")]
 
-[node name="Head" parent="." index="12"]
+[node name="Head" parent="." index="11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="fps-hands" type="Node3D" parent="Head/Camera" index="0" node_paths=PackedStringArray("camera", "node_recoil_x", "node_recoil_y")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
-script = ExtResource("18_fps-hands")
-camera = NodePath("..")
-node_recoil_x = NodePath("..")
-node_recoil_y = NodePath("../..")
-
-[node name="Marker3D" type="Marker3D" parent="Head/Camera/fps-hands" index="0"]
+[node name="WeaponManager" type="Node3D" parent="Head/Camera" index="0" node_paths=PackedStringArray("Camera")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("16_plyax")
+Camera = NodePath("..")
 
 [node name="Head Bob" parent="Head" index="1"]
 BobCurve = ExtResource("16_j0nls")
 
-[node name="TextureRect" type="TextureRect" parent="." index="13"]
+[node name="TextureRect" type="TextureRect" parent="." index="12"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -80,3 +76,7 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 0.28
 texture = ExtResource("17_li5qc")
 expand_mode = 4
+
+[node name="HealthAbility3D" type="Node3D" parent="." index="13"]
+script = ExtResource("19_plyax")
+_active = true

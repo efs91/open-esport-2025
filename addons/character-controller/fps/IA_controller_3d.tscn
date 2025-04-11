@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://crx5urc7vndfo"]
+
+[ext_resource type="PackedScene" uid="uid://ciu2qgckgu5sr" path="res://addons/character-controller/core/controller.tscn" id="1_bul0p"]
+[ext_resource type="Script" uid="uid://by1lvq2jf53w2" path="res://addons/character-controller/fps/IAController3D.cs" id="2_bul0p"]
+[ext_resource type="Script" uid="uid://dajuoo5hovdmc" path="res://addons/character-controller/fps/HeadMovement3D.cs" id="3_uswl4"]
+[ext_resource type="Script" uid="uid://cpch5mcmgl27h" path="res://addons/character-controller/fps/bob/HeadBob.cs" id="4_m5sed"]
+[ext_resource type="Resource" uid="uid://duu5m0sajkuix" path="res://addons/character-controller/fps/bob/timed_bob_curve.tres" id="5_m3gma"]
+
+[node name="IAController3D" instance=ExtResource("1_bul0p")]
+script = ExtResource("2_bul0p")
+AbilitiesPath = Array[NodePath]([])
+
+[node name="Head" type="Marker3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0)
+script = ExtResource("3_uswl4")
+
+[node name="Head Bob" type="Node" parent="Head" index="0"]
+script = ExtResource("4_m5sed")
+HeadPath = NodePath("")
+TimedBobCurve = ExtResource("5_m3gma")

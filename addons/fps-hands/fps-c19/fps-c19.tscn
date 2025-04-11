@@ -150,7 +150,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 7.96677, 14.2722)
 cast_shadow = 0
 
 [node name="MuzzlePoint" type="Node3D" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4/BPpistol/base" index="1"]
-transform = Transform3D(0.999954, 0.00959165, 0.000819436, -0.0095779, 0.999837, -0.0153506, -0.000966534, 0.0153421, 0.999882, 0, 7.503, 21.21)
+transform = Transform3D(0.999954, 0.00959165, 0.000819436, -0.0095779, 0.999837, -0.0153506, -0.000966534, 0.0153421, 0.999882, 0, 7.503, 23.4835)
 
 [node name="clip" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4/BPpistol" index="1"]
 transform = Transform3D(1, 4.66943e-17, 1.10638e-17, -3.99741e-17, 0.938129, -0.346285, -2.65488e-17, 0.346285, 0.938129, 0, -3.003, -1.03204)
@@ -193,6 +193,9 @@ transform = Transform3D(-0.31116, 0.929846, -0.196384, 0.944911, 0.32479, 0.0406
 
 [node name="L_wrist_Goal" parent="Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4" index="5"]
 transform = Transform3D(0.365785, -0.76462, 0.530621, -0.910943, -0.177286, 0.372494, -0.190745, -0.619618, -0.761374, 24.1279, -26.3406, -11.1621)
+
+[node name="Marker3D" type="Marker3D" parent="Sketchfab_model" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, -51.6287, 15.4013)
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeStateMachine_mdbok")
