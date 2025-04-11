@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dtxyoypudtllo"]
+[gd_scene load_steps=22 format=3 uid="uid://dtxyoypudtllo"]
 
 [ext_resource type="PackedScene" uid="uid://1m63rxyd6siv" path="res://addons/fps-hands/fps-smg45/resources/fps_animated_smg.glb" id="1_yl4uh"]
 
@@ -88,8 +88,6 @@ states/take/node = SubResource("AnimationNodeAnimation_riln8")
 states/take/position = Vector2(305.731, 100)
 transitions = ["Start", "take", SubResource("AnimationNodeStateMachineTransition_4twgp"), "idle", "fire", SubResource("AnimationNodeStateMachineTransition_0nkse"), "idle", "melee", SubResource("AnimationNodeStateMachineTransition_r2p1r"), "idle", "reload", SubResource("AnimationNodeStateMachineTransition_rerum"), "idle", "reload_full", SubResource("AnimationNodeStateMachineTransition_gfn05"), "idle", "hide", SubResource("AnimationNodeStateMachineTransition_af7us"), "take", "idle", SubResource("AnimationNodeStateMachineTransition_ap2eu"), "hide", "End", SubResource("AnimationNodeStateMachineTransition_7u442"), "melee", "idle", SubResource("AnimationNodeStateMachineTransition_7uiia"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_n858q"), "reload", "idle", SubResource("AnimationNodeStateMachineTransition_0l5qe"), "reload_full", "idle", SubResource("AnimationNodeStateMachineTransition_5iptf")]
 graph_offset = Vector2(-191.269, -23.436)
-
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_g0b5m"]
 
 [node name="fps-smg45" instance=ExtResource("1_yl4uh")]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, -0.1, -0.4, 0.2)
@@ -213,7 +211,6 @@ tree_root = SubResource("AnimationNodeStateMachine_yvxt5")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
-stream = SubResource("AudioStreamPolyphonic_g0b5m")
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="animation_started" from="AnimationTree" to="." method="_on_animation_tree_animation_started"]

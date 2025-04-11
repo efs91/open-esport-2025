@@ -134,6 +134,9 @@ public partial class WeaponManager : Node3D
 	private double _lastFireTime;
 	private double _fireRate = 0.1; // 10 tirs par seconde par défaut
 
+	private bool _canShoot = true;
+	private bool _wasShooting = false;
+
 	public override void _Ready()
 	{
 		_logManager = GetNode<LogManager>(GlobalPaths.Managers.LOG_MANAGER);
@@ -213,6 +216,15 @@ public partial class WeaponManager : Node3D
 
 	private void OnShootStateChanged(bool isShooting)
 	{
+		// Si le bouton est relâché, on réinitialise _canShoot et _wasShooting
+		if (!isShooting)
+		{
+			_canShoot = true;
+			_wasShooting = false;
+			return;
+		}
+
+		// Vérifications pour le tir
 		if (_isReloading || _weapon == null)
 		{
 			_logManager.Debug("Tentative de tir impossible : rechargement en cours ou arme non disponible");
@@ -225,55 +237,52 @@ public partial class WeaponManager : Node3D
 			return;
 		}
 
-		var currentTime = Time.GetTicksMsec() / 1000.0;
-		if (currentTime - _lastFireTime < _delta)
+		if (!_canShoot)
 		{
-			_logManager.Debug("Tentative de tir trop rapide");
+			_logManager.Debug("Tentative de tir impossible : animation en cours");
 			return;
 		}
 
-		if (isShooting)
+		// Pour les armes automatiques, on tire tant que le bouton est maintenu
+		// Pour les armes semi-automatiques, on ne tire qu'une fois par appui
+		if ((_isAuto && isShooting) || (!_isAuto && !_wasShooting))
 		{
-			// Pour les armes automatiques, on tire tant que le bouton est maintenu
-			// Pour les armes semi-automatiques, on ne tire qu'une fois par appui
-			if (_isAuto || currentTime - _lastFireTime >= _delta)
+			_canShoot = false;
+			_wasShooting = true;
+			_magazine--;
+
+			if (_stateMachine != null)
+				_stateMachine.Travel("fire");
+
+			var bullet = _bulletScene.Instantiate<Bullet>();
+			GetTree().Root.AddChild(bullet);
+
+			if (Camera != null && _muzzlePoint != null)
 			{
-				_lastFireTime = currentTime;
-				_magazine--;
+				bullet.GlobalPosition = _muzzlePoint.GlobalPosition;
 
-				if (_stateMachine != null)
-					_stateMachine.Travel("fire");
-
-				var bullet = _bulletScene.Instantiate<Bullet>();
-				GetTree().Root.AddChild(bullet);
-
-				if (Camera != null && _muzzlePoint != null)
+				// La direction de tir doit correspondre précisément à celle de la caméra
+				Vector3 direction = -Camera.GlobalTransform.Basis.Z.Normalized();
+				
+				float spread = _weapon.GetMeta("spread", 0.0f).As<float>();
+				if (spread > 0)
 				{
-					bullet.GlobalPosition = _muzzlePoint.GlobalPosition;
-
-					// La direction de tir doit correspondre précisément à celle de la caméra
-					Vector3 direction = -Camera.GlobalTransform.Basis.Z.Normalized();
-					
-					float spread = _weapon.GetMeta("spread", 0.0f).As<float>();
-					if (spread > 0)
-					{
-						direction = direction.Rotated(Camera.GlobalTransform.Basis.Y, (float)GD.RandRange(-spread, spread));
-						direction = direction.Rotated(Camera.GlobalTransform.Basis.X, (float)GD.RandRange(-spread, spread));
-					}
-
-					var bulletSpeed = 1.0f;
-					bullet.set_initial_direction(direction * bulletSpeed);
-
-					_logManager.Debug($"Balle créée - Direction: {direction}, Vitesse: {bulletSpeed}, Position: {bullet.GlobalPosition}");
-				}
-				else
-				{
-					_logManager.Error("Camera ou Marker3D non trouvé");
+					direction = direction.Rotated(Camera.GlobalTransform.Basis.Y, (float)GD.RandRange(-spread, spread));
+					direction = direction.Rotated(Camera.GlobalTransform.Basis.X, (float)GD.RandRange(-spread, spread));
 				}
 
-				ApplyRecoil();
-				SpawnMuzzleEffects();
+				var bulletSpeed = 1.0f;
+				bullet.set_initial_direction(direction * bulletSpeed);
+
+				_logManager.Debug($"Balle créée - Direction: {direction}, Vitesse: {bulletSpeed}, Position: {bullet.GlobalPosition}");
 			}
+			else
+			{
+				_logManager.Error("Camera ou Marker3D non trouvé");
+			}
+
+			ApplyRecoil();
+			SpawnMuzzleEffects();
 		}
 	}
 
@@ -353,6 +362,11 @@ public partial class WeaponManager : Node3D
 		{
 			TopLevel = true;
 		}
+		if (_animation != null)
+		{
+			// Utiliser le _delta déjà initialisé
+			_animation.Set("parameters/fire/speed_scale", 1.0f / _delta);
+		}
 	}
 
 	public void UpdateInventory()
@@ -429,7 +443,7 @@ public partial class WeaponManager : Node3D
 			_adsPos = _weapon.GetMeta("ads_pos", _startPos).As<Vector3>();
 			_isAuto = _weapon.GetMeta("auto", false).As<bool>();
 			_delta = _weapon.GetMeta("delta", 1.0f).As<float>();
-			_fireRate =  _delta;
+			_fireRate = 1.0f / _delta;
 			_logManager.Debug($"Position de départ: {_startPos}, Position ADS: {_adsPos}");
 			_logManager.Debug($"Mode automatique: {_isAuto}, Delta: {_delta}, FireRate: {_fireRate}");
 
@@ -494,6 +508,10 @@ public partial class WeaponManager : Node3D
 		{
 			_logManager.Debug($"Animation 'show' terminée - Arme visible: {_weapon.Visible}, Position: {_weapon.GlobalPosition}, Rotation: {_weapon.GlobalRotation}");
 			_weapon.Visible = true;
+		}
+		else if (animName == "fire")
+		{
+			_canShoot = true;
 		}
 	}
 
